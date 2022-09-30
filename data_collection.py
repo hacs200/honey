@@ -7,7 +7,7 @@ ip_addresses = []
 ip_address_pattern = re.compile(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
 
 # This file name will need to be changed once we determine what we will be naming the auth.log file we transfer, as well as how often we will be running this script.
-with open('../../auth.log', 'r') as file:
+with open('../logs/auth.log', 'r') as file:
     for line in file:
         if line.find("Accepted password") != -1:
             ip_addresses.append(ip_address_pattern.search(line)[0])
@@ -18,7 +18,7 @@ print(ip_addresses)
 times = {}
 time_pattern = re.compile(r'\b([01]?[0-9]|2[0-3]):([0-5][0-9])(?::([0-9][0-9]))?\b')
 
-with open('../../auth.log', 'r') as file:
+with open('../logs/auth.log', 'r') as file:
     for line in file:
         if line.find("Accepted password") != -1:
             start_time = time_pattern.search(line)[0]
@@ -42,7 +42,7 @@ print(times)
 
 commands = []
 
-with open('../../snoopy.log', 'r') as file:
+with open('../logs/snoopy.log', 'r') as file:
     for line in file:
         line = line.rsplit(']: ', 1)[1]
         if line.find("Server listening") == -1:

@@ -1,0 +1,21 @@
+Sep 25 14:15:58 pain sshd[111]: Server listening on 0.0.0.0 port 22.
+Sep 25 14:15:58 pain sshd[111]: Server listening on :: port 22.
+Sep 25 14:15:58 pain snoopy[112]: [uid:0 sid:102 tty:(none) cwd:/ filename:/usr/bin/networkctl]: /usr/bin/networkctl list --no-pager --no-legend
+Sep 25 14:15:58 pain snoopy[113]: [uid:0 sid:113 tty:(none) cwd:/ filename:/lib/systemd/systemd-update-utmp]: /lib/systemd/systemd-update-utmp runlevel
+Sep 25 14:15:58 pain snoopy[101]: [uid:0 sid:101 tty:(none) cwd:/ filename:/usr/bin/savelog]: /usr/bin/savelog -q -p -n -c 5 /var/log/dmesg
+Sep 25 14:15:58 pain snoopy[110]: [uid:0 sid:110 tty:(none) cwd:/ filename:/sbin/agetty]: /sbin/agetty -o -p -- \u --noclear --keep-baud console 115200,38400,9600 vt220
+Sep 25 14:15:58 pain snoopy[114]: [uid:0 sid:101 tty:(none) cwd:/ filename:/usr/bin/date]: date +%Y%m%d%H%M%S
+Sep 25 14:15:58 pain snoopy[115]: [uid:0 sid:101 tty:(none) cwd:/ filename:/usr/bin/basename]: basename /usr/bin/savelog
+Sep 25 14:15:58 pain snoopy[116]: [uid:0 sid:101 tty:(none) cwd:/ filename:/usr/bin/which]: which gzip
+Sep 25 14:15:58 pain snoopy[117]: [uid:0 sid:117 tty:(none) cwd:/ filename:/bin/journalctl]: /bin/journalctl --boot 0 --dmesg --output short-monotonic --quiet --no-pager --no-hostname
+Sep 25 14:15:58 pain snoopy[118]: [uid:0 sid:118 tty:(none) cwd:/ filename:/bin/chgrp]: /bin/chgrp adm /var/log/dmesg
+Sep 25 14:16:01 pain snoopy[120]: [uid:0 sid:120 tty:(none) cwd:/ filename:/lib/systemd/systemd-hostnamed]: /lib/systemd/systemd-hostnamed
+Sep 25 14:16:07 pain snoopy[122]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/groups]: groups
+Sep 25 14:16:07 pain snoopy[123]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/lesspipe]: lesspipe
+Sep 25 14:16:07 pain snoopy[124]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/basename]: basename /usr/bin/lesspipe
+Sep 25 14:16:07 pain snoopy[126]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/dirname]: dirname /usr/bin/lesspipe
+Sep 25 14:16:07 pain snoopy[127]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/dircolors]: dircolors -b
+Sep 25 14:16:08 pain snoopy[128]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/ls]: ls --color=auto
+Sep 25 14:16:21 pain snoopy[129]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/ls]: ls --color=auto var
+Sep 25 14:16:29 pain snoopy[130]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/ls]: ls --color=auto var/log
+Sep 25 14:16:52 pain snoopy[131]: [uid:0 sid:121 tty:/dev/pts/5 cwd:/ filename:/usr/bin/cat]: cat var/log/auth.log
