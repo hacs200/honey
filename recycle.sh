@@ -3,6 +3,9 @@
 # recycling script will take one argument ($1) for the file containing the last connected ip address
 # this file will only have one line containing said ip address
 
+# recycling script will be called in another script that occurs immediately after an attacker exits
+# the honeypot
+
 # print usage if incorrect number of arguments provided
 if [ $# -ne 1 ]
 then
@@ -26,5 +29,7 @@ done
 # set up firewall rules 
 lxc-attach -n container -- iptables -I INPUT -m set --match-set blacklist src -j DROP
 lxc-attach -n container -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
+
+# re-configure MITM 
 
 exit 0
