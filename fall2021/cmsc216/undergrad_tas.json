@@ -1,0 +1,78 @@
+[
+    {
+       "Jason Walter":
+       {
+            "Email": "jwalter@umd.edu",
+            "Address": "3000 Black Rock Rd",
+            "Race": "White",
+            "Mobile": 4102589653,
+            "Age": 19,
+            "Education": "Some College"
+       } 
+    },
+    {
+        "Phillipa Davison":
+        {
+            "Email": "pdavison@umd.edu",
+            "Address": "1624 Trawler Ln",
+            "Race": "Asian",
+            "Mobile": 9536845575,
+            "Age": 21,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Ismaeel Wickens":
+        {
+            "Email": "iwickens@umd.edu",
+            "Address": "44400 Moss Ct",
+            "Race": "Asian",
+            "Mobile": 5425556863,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Aurelia Guerra":
+        {
+            "Email": "aguerra@umd.edu",
+            "Address": "42191 Riva Ridge Dr",
+            "Race": "Hispanic",
+            "Mobile": 3012556963,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Matas Webb": {
+            "Email": "mwebb@umd.edu",
+            "Address": "9270 Cherry Ln",
+            "Race": "Black",
+            "Mobile": 6653214252,
+            "Age": 20,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Renee Pritchard":
+        {
+            "Email": "rpritchard@umd.edu",
+            "Address": "2824 Patapsco Rd",
+            "Race": "White",
+            "Mobile": 2408265492,
+            "Age": 20,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Rees Foley":
+        {
+            "Email": "rfoley@umd.edu",
+            "Address": "8371 Montgomery Run Rd",
+            "Race": "White", 
+            "Mobile": 4105098429,
+            "Age": 22,
+            "Education":"Some College"
+        }
+    }
+]

@@ -1,0 +1,78 @@
+[
+    {
+       "Maud Herman":
+       {
+            "Email": "mherman@umd.edu",
+            "Address": "16000 Baden Naylor Rd",
+            "Race": "White",
+            "Mobile": 3017853239,
+            "Age": 19,
+            "Education": "Some College"
+       } 
+    },
+    {
+        "Jan Shepherd":
+        {
+            "Email": "jshepherd@umd.edu",
+            "Address": "8801 Blosson Point Rd",
+            "Race": "Asian",
+            "Mobile": 4102457226,
+            "Age": 21,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Bentley Reilly":
+        {
+            "Email": "breilly@umd.edu",
+            "Address": "300 Game Creek Dr",
+            "Race": "Black",
+            "Mobile": 4435687451,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Devon Hampton":
+        {
+            "Email": "dhampton@umd.edu",
+            "Address": "504 Burning Tree Dr",
+            "Race": "Asian",
+            "Mobile": 4436554489,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Robert Knapp": {
+            "Email": "rknapp@umd.edu",
+            "Address": "400 Sisson Ct",
+            "Race": "Hispanic",
+            "Mobile": 4108004760,
+            "Age": 20,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Clayton Johnston":
+        {
+            "Email": "cjohnston@umd.edu",
+            "Address": "101 Edgeway",
+            "Race": "White",
+            "Mobile": 4108521021,
+            "Age": 20,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Corrina Knox":
+        {
+            "Email": "cknox@umd.edu",
+            "Address": "1921 Hope St",
+            "Race": "White", 
+            "Mobile": 4107277010,
+            "Age": 22,
+            "Education":"Some College"
+        }
+    }
+]
