@@ -14,8 +14,10 @@ with open('logs/auth.log', 'r') as file:
         if line.find("Accepted password") != -1:
             ip_addresses.append(ip_address_pattern.search(line)[0])
 
-# Might consider writting these IP addresses to another file and using that file for the addition of firewall rules preventing the return of past attackers
-print(ip_addresses)
+curr_ip_address = ip_addresses.pop()
+
+with open('data/last_ip_address.txt', 'w') as file:
+    file.write(curr_ip_address)
 
 times = {}
 time_pattern = re.compile(r'\b([01]?[0-9]|2[0-3]):([0-5][0-9])(?::([0-9][0-9]))?\b')
@@ -43,8 +45,11 @@ with open('logs/auth.log', 'r') as file:
                 # Puts the total time into "Hour:Minute:Second" format by using the str method
                 times[ip_address_pattern.search(line)[0]] = str(total_time)
 
-# We will need to figure out how we want to store this long term
-print(times)
+with open('data/times/total_time.txt', 'w') as file:
+    file.write('[\n')
+    for line in times:
+        file.write(line + ": " + times[line] + ",\n")
+    file.write("]")
 
 commands = []
 
@@ -54,6 +59,7 @@ with open('logs/snoopy.log', 'r') as file:
         if line.find("Server listening") == -1:
             commands.append(line)
 
-# Need to determine how to store this long term
-print(commands)
+with open(f'data/commands/{curr_ip_address}.txt', 'w') as file:
+    for line in commands:
+        file.write(line + "\n")
 
