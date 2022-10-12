@@ -2,8 +2,7 @@
 
 import re
 import datetime
-import time
-from datetime import date, timedelta, datetime
+from datetime import timedelta, datetime
 import sys
 
 container_name = sys.argv[1]
