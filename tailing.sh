@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo tail -f /path/to/container/var/log/auth.log >> logs/our_auth.log &
+sudo tail -f /var/lib/lxc/$1/rootfs/var/log/auth.log >> logs/our_auth.log &
