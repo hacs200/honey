@@ -1,0 +1,78 @@
+[
+    {
+       "Jason Walter":
+       {
+            "Email": "jwalter@umd.edu",
+            "Address": "3000 Black Rock Rd",
+            "Race": "White",
+            "Mobile": 4102589653,
+            "Age": 19,
+            "Education": "Some College"
+       } 
+    },
+    {
+        "Maureen Farmer":
+        {
+            "Email": "mfarmer@umd.edu",
+            "Address": "443 W Diamond Ave",
+            "Race": "Asian",
+            "Mobile": 3012575678,
+            "Age": 21,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Imaani Thorpe":
+        {
+            "Email": "ithorpe@umd.edu",
+            "Address": "2300 229th St",
+            "Race": "Black",
+            "Mobile": 2404854024,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Gurdeep Beltran":
+        {
+            "Email": "gbeltran@umd.edu",
+            "Address": "6512 Eberle Dr",
+            "Race": "Asian",
+            "Mobile": 4432725722,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Julio Pagan": {
+            "Email": "jpagan@umd.edu",
+            "Address": "2920 Lakebrook Cir",
+            "Race": "Hispanic",
+            "Mobile": 3012619679,
+            "Age": 20,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Monet Bryant":
+        {
+            "Email": "mbryant@umd.edu",
+            "Address": "15912 Crain Hwy",
+            "Race": "White",
+            "Mobile": 4105982345,
+            "Age": 20,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Rees Foley":
+        {
+            "Email": "rfoley@umd.edu",
+            "Address": "8371 Montgomery Run Rd",
+            "Race": "White", 
+            "Mobile": 4105098429,
+            "Age": 22,
+            "Education":"Some College"
+        }
+    }
+]

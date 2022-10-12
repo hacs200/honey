@@ -1,0 +1,78 @@
+[
+    {
+       "Amelia Talbot":
+       {
+            "Email": "atalbot@umd.edu",
+            "Address": "4918 Litchfield Ave",
+            "Race": "White",
+            "Mobile": 3012548821,
+            "Age": 19,
+            "Education": "Some College"
+       } 
+    },
+    {
+        "Jana Liu":
+        {
+            "Email": "jliu@umd.edu",
+            "Address": "32 Maryland Ave",
+            "Race": "Asian",
+            "Mobile": 4102589038,
+            "Age": 18,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Janet Choi":
+        {
+            "Email": "jchoi@umd.edu",
+            "Address": "11400 Wicomico Oaks Pl",
+            "Race": "Asian",
+            "Mobile": 8559015423,
+            "Age": 21,
+            "Education": "Associate's"
+        }
+    },
+    {
+        "Eric Wang":
+        {
+            "Email": "ewang@umd.edu",
+            "Address": "4201 51st St",
+            "Race": "Asian", 
+            "Mobile": 9514236869,
+            "Age": 20,
+            "Education":"Some College"
+        }
+    },
+    {
+        "Brennan Wickes":
+        {
+            "Email": "bwickes@umd.edu",
+            "Address": "6100 Smith Ave",
+            "Race": "White",
+            "Mobile": 3015836712,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Bryant Rivera":
+        {
+            "Email": "brivera@umd.edu",
+            "Address": "12801 Piscataway Landing Dr",
+            "Race": "Hispanic",
+            "Mobile": 4102698642,
+            "Age": 19,
+            "Education": "Some College"
+        }
+    },
+    {
+        "Layla Smith": {
+            "Email": "lsmith@umd.edu",
+            "Address": "3205 University Blvd",
+            "Race": "Black",
+            "Mobile": 4436548192,
+            "Age": 20,
+            "Education": "Associate's"
+        }
+    }
+]
