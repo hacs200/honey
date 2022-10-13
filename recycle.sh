@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# recycling script will take one argument ($1) for the file containing the last connected ip address
-# this file will only have one line containing said ip address
+# recycling script will take one argument ($1) for the file path to the file containing only the last connected ip address
 
-# recycling script will be called in another script that occurs immediately after an attacker exits
-# the honeypot
+# recycling script will be called in another script that occurs immediately after an attacker exits the honeypot
 
 # print usage if incorrect number of arguments provided
 if [ $# -ne 1 ]
@@ -13,11 +11,17 @@ then
     exit 1
 fi
 
+# file path should be in the form data/{container_name}/last_ip_address.txt
+name=`echo $1 | cut -d "/" -f 2`
+# file will only have one line containing the last connected ip address
+ip=`cat $1`
+
 # shut down and kill container
 lxc-stop -n container --kill
 
-# create container from snapshot
-lxc restore container snap
+# ADD IF/ELSE IF STATEMENTS FOR EACH CONTAINER
+# to make lxc copy of correct container for appropriate scenario
+# and to pull the correct blacklisted ip addresses file
 
 # add ip address to blacklist
 file = $(cat $1)
