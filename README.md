@@ -29,7 +29,7 @@ This script takes one argument, the name of the container for which data should 
 
 Using the name, the script finds all IP addresses that have connected successfully to the host and stores the final one in <code>data/{container_name}/last_ip_address.txt</code> on the host machine.
 
-The script then calculates the time between the connection and disconnection for each IP address to get the total amount of time the attacker spent in the container and stores the output in <code>data/{container_name}/times/{ip_address_of_attacker}.txt</code>.
+The script then calculates the time between the connection and disconnection for each IP address to get the total amount of time the attacker spent in the container and stores the output in <code>data/{container_name}/times/total_times.txt</code>.
 
 The script takes a log of all commands the attacker used and outputs them to <code>data/{container_name}/commands/{ip_address_of_attacker}.txt</code>. If the Snoopy log was deleted, LOG DELETED is written to this file.
 
