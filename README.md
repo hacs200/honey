@@ -17,6 +17,9 @@ This script takes in 4 arguments:
   
 ## Data Collection
 
+### <code>tailing.sh</code>
+This script takes one argument, the name of the container for which the <code>auth.log</code> should be tailed. This process is run in the background and output to <code>logs/{container_name}/auth.log</code>.
+
 ### <code>data_collection.sh</code>
 This script takes one argument, the name of the container for which data should be collected.
 
