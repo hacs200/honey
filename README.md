@@ -20,7 +20,7 @@ This script takes in 4 arguments:
 ### <code>data_collection.sh</code>
 This script takes one argument, the name of the container for which data should be collected.
 
-Using the name, the script determines if the container's Snoopy log has been deleted. If not, it copies the log to the host machine. If it has been deleted, it outputs "LOG DELETED" to the file where the Snoopy log would otherwise be stored on the host machine.
+Using the name, the script determines if the container's Snoopy log has been deleted. If not, it copies the log to the host machine. If it has been deleted, it outputs "LOG DELETED" to the file where the Snoopy log would otherwise be stored on the host machine, at <code>logs/{container_name}/snoopy.log</code>.
 
 This script then calls <code>data_collection.sh</code>
 
