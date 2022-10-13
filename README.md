@@ -17,14 +17,14 @@ This script takes in 4 arguments:
   
 ## Data Collection
 
-###<code>data_collection.sh</code>
+### <code>data_collection.sh</code>
 This script takes one argument, the name of the container for which data should be collected.
 
 Using the name, the script determines if the container's Snoopy log has been deleted. If not, it copies the log to the host machine. If it has been deleted, it outputs "LOG DELETED" to the file where the Snoopy log would otherwise be stored on the host machine.
 
 This script then calls <code>data_collection.sh</code>
 
-###<code>data_collection.py</code>
+### <code>data_collection.py</code>
 This script takes one argument, the name of the container for which data should be collected.
 
 Using the name, the script finds all IP addresses that have connected successfully to the host and stores the final one in <code>data/{container_name}/last_ip_address.txt</code> on the host machine.
