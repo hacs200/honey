@@ -57,9 +57,12 @@ commands = []
 
 with open(f'logs/{container_name}/snoopy.log', 'r') as file:
     for line in file:
-        line = line.rsplit(']: ', 1)[1]
-        if line.find("Server listening") == -1:
+        if line.find("LOG DELETED") != -1:
             commands.append(line)
+        else:
+            line = line.rsplit(']: ', 1)[1]
+            if line.find("Server listening") == -1:
+                commands.append(line)
 
 with open(f'data/{container_name}/commands/{curr_ip_address}.txt', 'w') as file:
     for line in commands:
