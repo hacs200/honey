@@ -20,7 +20,6 @@ sudo lxc-stop -n "HONEYPOT_${name}" --kill
 
 # make lxc copy of correct container for appropriate scenario
 sudo lxc-copy -n $name -N "HONEYPOT_${name}"
-fi
 
 # TODO: re-configure iptable rules 
 
