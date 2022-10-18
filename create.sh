@@ -41,7 +41,7 @@ do
 	sudo lxc-start -n $n
 
 	# CREATE FAKE ADMIN USER
-	sudo lxc-attach -n $n -- bash -c "sudo useradd -m staff -p password"
+	sudo lxc-attach -n $n -- bash -c "sudo useradd -m test -p password"
 	# sudo lxc-attach -n $n -- bash -c "sudo passwd admin"
 	# prompt will appear, input desired password
 	
