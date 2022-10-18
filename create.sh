@@ -13,13 +13,15 @@
 #	exit 1
 #fi
 
+sudo iptables-restore ./iptables.txt
+
 names=( "no_banner" "low_banner" "med_banner" "high_banner" )
 names=( $(shuf -e "${names[@]}")) 
 #arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185" "128.8.238.112" )
 arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
 
 #length=${#names[@]}
-length=1
+length=4
 for ((j = 0 ; j < $length; j++));
 do
 	
@@ -61,12 +63,6 @@ do
 	sudo lxc-attach -n $n -- bash -c "sudo ./install-snoopy.sh stable"
 	sudo lxc-attach -n $n -- bash -c "rm -rf ./install-snoopy.* snoopy-*" 
 	sudo lxc-attach -n $n -- bash -c "echo output = file:/var/log/snoopy.log >> /etc/snoopy.ini" 
-
-	# INSTALL IPTABLES
-	sudo lxc-attach -n $n -- bash -c "sudo apt-get update"
-	sudo lxc-attach -n $n -- bash -c "sudo apt-get install iptables"
-	sudo lxc-attach -n $n -- bash -c "sudo apt-get install ipset"
-	sudo lxc-attach -n $n -- bash -c "sudo ipset create blacklist nethash"
 
 	# SET UP EXTERNAL IP
 	container_ip=$(sudo lxc-info -n $n -iH)
