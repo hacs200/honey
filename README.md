@@ -2,7 +2,7 @@
 Mia Hsu, Jana Liu, Rayn Carrillo, Amelia Talbot
 
 ## Base Honeypots
-The recycling script relies on creating copies of our base honeypots. We have 4 base honeypots, one for each scenario. Each base honeypot has a different SSH banner.
+The recycling script relies on creating copies of our base honeypots. We have 4 base honeypots, one for each scenario. Each base honeypot has a different SSH banner. They are named in relation to their banner, with names being <code>no_banner</code>, <code>low_banner</code>, <code>med_banner</code>, and <code>high_banner</code>.
 
 In order to create these base honeypots, we have a script called <code>create.sh</code>.
 
