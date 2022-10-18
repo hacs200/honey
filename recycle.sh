@@ -47,8 +47,8 @@ do
 done
 
 # set up firewall rules
-sudo lxc-attach -n $name -- iptables -I INPUT -m set --match-set blacklist src -j DROP
-sudo lxc-attach -n $name -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
+sudo lxc-attach -n $name -- bash -c "iptables -I INPUT -m set --match-set blacklist src -j DROP"
+sudo lxc-attach -n $name -- bash -c "iptables -I FORWARD -m set --match-set blacklist src -j DROP"
 
 # TODO: re-configure MITM 
 
