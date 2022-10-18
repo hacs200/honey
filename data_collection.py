@@ -18,7 +18,7 @@ with open(f'logs/{container_name}/auth.log', 'r') as file:
 
 curr_ip_address = ip_addresses.pop()
 
-with open(f'data/{container_name}/last_ip_address.txt', 'w') as file:
+with open(f'data/{container_name}/last_ip_address.txt', 'a') as file:
     file.write(curr_ip_address)
 
 times = {}
