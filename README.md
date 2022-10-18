@@ -42,8 +42,6 @@ This script takes one argument, the file path to the file containing the last co
 
 Using the file path, the script is able to identify which of the 4 honeypot instantiations needs to be recycled. The script then kills the correct honeypot container and creates a new copy of the honeypot using the appropriate base honeypot.
 
-Since we do not want any IP address to be able to attack a honeypot that has already been visited, we add the last connected IP address to the blacklist for the correct honeypot scenario. Each scenario has its own blacklist to allow the same attacker to attack the other honeypot instantiations.
-
 ## Putting It All Together
 We have a master script called <code>master_script.sh</code> which is called each time an attacker disconnects from one of our honeypots.
 
