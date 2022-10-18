@@ -11,42 +11,45 @@ then
     exit 1
 fi
 
-# file path should be in the form data/{container_name}/last_ip_address.txt
+# file path provided as arugment should be in the form data/{container_name}/last_ip_address.txt
+# extract container name to a variable (name)
 name=`echo $1 | cut -d "/" -f 2`
 
 # shut down and kill container
-lxc-stop -n $name --kill
+sudo lxc-stop -n $name --kill
 
-# ADD IF/ELSE IF STATEMENTS FOR EACH CONTAINER
-# to make lxc copy of correct container for appropriate scenario
-# and to pull the correct blacklisted ip addresses file
+# pull the correct blacklisted ip addresses file
+# make lxc copy of correct container for appropriate scenario
 if [ $name == 'no_banner' ]
 then
-    # copy no_banner
+    file="/home/honey/data/no_banner/last_ip_address.txt"
+    sudo lxc-copy -n no_banner -N HONEYPOT_no
 elif [ $name == 'low_banner']
 then
-    # copy low_banner
+    file="/home/honey/data/low_banner/last_ip_address.txt"
+    sudo lxc-copy -n low_banner -N HONEYPOT_low
 elif [ $name == 'med_banner']
 then
-    # copy med_banner
+    file="/home/honey/data/med_banner/last_ip_address.txt"
+    sudo lxc-copy -n med_banner -N HONEYPOT_med
 else
-    # copy high_banner
+    file="/home/honey/data/high_banner/last_ip_address.txt"
+    sudo lxc-copy -n high_banner -N HONEYPOT_high
 fi
 
-sudo lxc-attach -n $name -- bash -c "sudo ipset flush blacklist"
+# clear blacklist
+sudo ipset flush blacklist
 
 # add ip address to blacklist
-file = $(cat $1)
 for line in $file
 do
     sudo lxc-attach -n $name -- bash -c "ipset add blacklist $line"
 done
 
-./dit_firewall_rules.sh
-# set up firewall rules 
-lxc-attach -n $name -- iptables -I INPUT -m set --match-set blacklist src -j DROP
-lxc-attach -n $name -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
-./dit_firewall_rules2.sh
-# re-configure MITM 
+# set up firewall rules
+sudo lxc-attach -n $name -- iptables -I INPUT -m set --match-set blacklist src -j DROP
+sudo lxc-attach -n $name -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
+
+# TODO: re-configure MITM 
 
 exit 0
