@@ -13,7 +13,7 @@
 #	exit 1
 #fi
 
-names=( "none" "weak" "legal" "violence" )
+names=( "no_banner" "low_banner" "med_banner" "high_banner" )
 names=( $(shuf -e "${names[@]}")) 
 #arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185" "128.8.238.112" )
 arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
@@ -22,18 +22,26 @@ arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
 length=1
 for ((j = 0 ; j < $length; j++));
 do
+	
 	n=${names[$j]}
 	ip=${arr[$j]}
 	mask=24
 	echo "$n"
 	echo "$ip"
+
+	exists=$(sudo lxc-ls -1 | grep -w $n | wc -l)
+	if [ $exists -ne 0 ]
+	then
+		sudo lxc-stop $n
+		sudo lxc-destroy $n
+	fi 
+
 	
 	sudo DOWNLOAD_KEYSERVER="keyserver.ubuntu.com" lxc-create -n $n -t download -- -d ubuntu -r focal -a amd64
 	sudo lxc-start -n $n
 
 	# CREATE FAKE ADMIN USER
-	sudo lxc-attach -n $n -- bash -c 
-	sudo lxc-attach -n $n -- bash -c "sudo useradd -m admin -p password"
+	sudo lxc-attach -n $n -- bash -c "sudo useradd -m staff -p password"
 	# sudo lxc-attach -n $n -- bash -c "sudo passwd admin"
 	# prompt will appear, input desired password
 	
@@ -66,7 +74,9 @@ do
 	sudo ip addr add $ip/$mask brd + dev enp4s2
 	sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ip --jump DNAT --to-destination $container_ip
 	sudo iptables --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ip 
-
+	sudo ./firewall.sh
+	#sudo ./dit_firewall_rules.sh
+	#sudo ./dit_firewall_rules2.sh
 	# SET UP PORT DROPPING RULES 
 	# sudo iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 	# sudo iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
