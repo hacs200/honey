@@ -1,10 +1,10 @@
 # HACS200 Honeypot Capstone: SSH Warning Banners
 Mia Hsu, Jana Liu, Rayn Carrillo, Amelia Talbot
 
-## Base Honeypots
-The recycling script relies on creating copies of our base honeypots. We have 4 base honeypots, one for each scenario. Each base honeypot has a different SSH banner. They are named in relation to their banner, with names being <code>no_banner</code>, <code>low_banner</code>, <code>med_banner</code>, and <code>high_banner</code>.
+## Honeypot Templates
+The recycling script relies on creating copies of our honeypot templates. We have 4 honeypot templates, one for each scenario. Each honeypot template has a different SSH banner. They are named in relation to their banner, with names being <code>no_banner</code>, <code>low_banner</code>, <code>med_banner</code>, and <code>high_banner</code>.
 
-In order to create these base honeypots, we have a script called <code>create.sh</code>.
+In order to create these honeypot templates, we have a script called <code>create.sh</code>.
 
 ### <code>create.sh</code>
 This script takes in 4 arguments:
@@ -40,7 +40,7 @@ The script takes a log of all commands the attacker used and outputs them to <co
 ### <code>recycle.sh</code>
 This script takes one argument, the file path to the file containing the last connected IP address.
 
-Using the file path, the script is able to identify which of the 4 honeypot instantiations needs to be recycled. The script then kills the correct honeypot container and creates a new copy of the honeypot using the appropriate base honeypot.
+Using the file path, the script is able to identify which of the 4 honeypot instantiations needs to be recycled. The script then kills the correct honeypot container and creates a new copy of the honeypot using the appropriate honeypot template.
 
 ## Putting It All Together
 We have a master script called <code>master_script.sh</code> which is called each time an attacker disconnects from one of our honeypots.
