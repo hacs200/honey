@@ -33,19 +33,20 @@ else
     # copy high_banner
 fi
 
-sudo ipset flush blacklist
+sudo lxc-attach -n $name -- bash -c "sudo ipset flush blacklist"
 
 # add ip address to blacklist
 file = $(cat $1)
 for line in $file
 do
-    sudo ipset add blacklist $line
+    sudo lxc-attach -n $name -- bash -c "ipset add blacklist $line"
 done
 
+./dit_firewall_rules.sh
 # set up firewall rules 
 lxc-attach -n $name -- iptables -I INPUT -m set --match-set blacklist src -j DROP
 lxc-attach -n $name -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
-
+./dit_firewall_rules2.sh
 # re-configure MITM 
 
 exit 0
