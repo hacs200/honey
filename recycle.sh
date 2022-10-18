@@ -16,10 +16,10 @@ fi
 name=`echo $1 | cut -d "/" -f 2`
 
 # shut down and kill container
-sudo lxc-stop -n "HONEYPOT_${name}" --kill
+sudo lxc-stop -n $name --kill
 
 # make lxc copy of correct container for appropriate scenario
-sudo lxc-copy -n $name -N "HONEYPOT_${name}"
+sudo lxc-copy -n "TEMPLATE_${name}" -N $name
 
 # TODO: re-configure iptable rules 
 
