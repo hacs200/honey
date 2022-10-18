@@ -19,8 +19,8 @@ name=`echo $1 | cut -d "/" -f 2`
 sudo lxc-stop -n $name --kill
 
 # make lxc copy of correct container for appropriate scenario
-sudo lxc-copy -n "TEMPLATE_${name}" -N $name
+sudo lxc-copy -n "template_${name}" -N $name
 
-# TODO: re-configure iptable rules 
+sudo lxc-start -n $name
 
 exit 0
