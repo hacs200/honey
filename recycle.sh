@@ -18,38 +18,9 @@ name=`echo $1 | cut -d "/" -f 2`
 # shut down and kill container
 sudo lxc-stop -n $name --kill
 
-# pull the correct blacklisted ip addresses file
 # make lxc copy of correct container for appropriate scenario
-if [ $name == 'no_banner' ]
-then
-    file="/home/honey/data/no_banner/last_ip_address.txt"
-    sudo lxc-copy -n no_banner -N HONEYPOT_no
-elif [ $name == 'low_banner']
-then
-    file="/home/honey/data/low_banner/last_ip_address.txt"
-    sudo lxc-copy -n low_banner -N HONEYPOT_low
-elif [ $name == 'med_banner']
-then
-    file="/home/honey/data/med_banner/last_ip_address.txt"
-    sudo lxc-copy -n med_banner -N HONEYPOT_med
-else
-    file="/home/honey/data/high_banner/last_ip_address.txt"
-    sudo lxc-copy -n high_banner -N HONEYPOT_high
-fi
+sudo lxc-copy -n "template_${name}" -N $name
 
-# clear blacklist
-sudo ipset flush blacklist
-
-# add ip address to blacklist
-for line in $file
-do
-    sudo lxc-attach -n $name -- bash -c "ipset add blacklist $line"
-done
-
-# set up firewall rules
-sudo lxc-attach -n $name -- iptables -I INPUT -m set --match-set blacklist src -j DROP
-sudo lxc-attach -n $name -- iptables -I FORWARD -m set --match-set blacklist src -j DROP
-
-# TODO: re-configure MITM 
+sudo lxc-start -n $name
 
 exit 0
