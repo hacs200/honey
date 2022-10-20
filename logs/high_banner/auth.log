@@ -1,0 +1,102 @@
+Oct 18 19:19:22 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:19:23 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:19:23 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 18 19:19:23 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:20:01 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:20:01 templatehighbanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 18 20:17:01 templatehighbanner CRON[8927]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 20:17:01 templatehighbanner CRON[8927]: pam_unix(cron:session): session closed for user root
+Oct 18 21:17:01 templatehighbanner CRON[8936]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 21:17:01 templatehighbanner CRON[8936]: pam_unix(cron:session): session closed for user root
+Oct 18 21:58:57 highbanner systemd-logind[106]: New seat seat0.
+Oct 18 21:58:57 highbanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 18 21:58:57 highbanner sshd[111]: Server listening on :: port 22.
+Oct 19 02:20:11 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 02:20:11 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:20:12 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:20:12 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 02:20:12 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:20:13 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:20:13 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 02:20:13 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:20:48 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:20:48 templatehighbanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 02:25:20 highbanner systemd-logind[105]: New seat seat0.
+Oct 19 02:25:20 highbanner sshd[109]: Server listening on 0.0.0.0 port 22.
+Oct 19 02:25:20 highbanner sshd[109]: Server listening on :: port 22.
+Oct 19 03:00:02 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:00:02 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:00:02 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:00:02 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:00:02 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:00:03 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:00:03 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:00:03 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:00:43 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:00:43 templatehighbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:04:19 highbanner systemd-logind[105]: New seat seat0.
+Oct 19 03:04:19 highbanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:04:19 highbanner sshd[110]: Server listening on :: port 22.
+Oct 19 03:10:01 highbanner CRON[123]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:10:01 highbanner CRON[123]: pam_unix(cron:session): session closed for user root
+Oct 19 03:17:01 highbanner CRON[126]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:17:01 highbanner CRON[126]: pam_unix(cron:session): session closed for user root
+Oct 19 03:30:09 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:30:09 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:30:10 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:30:10 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:30:46 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:30:46 templatehighbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:02 highbanner systemd-logind[103]: New seat seat0.
+Oct 19 03:33:03 highbanner sshd[112]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:03 highbanner sshd[112]: Server listening on :: port 22.
+Oct 19 03:30:10 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:30:10 templatehighbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:30:10 templatehighbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:30:46 templatehighbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:30:46 templatehighbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:02 highbanner systemd-logind[103]: New seat seat0.
+Oct 19 03:33:03 highbanner sshd[112]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:03 highbanner sshd[112]: Server listening on :: port 22.
+Oct 19 03:36:07 highbanner sshd[122]: Invalid user elms from 10.0.3.1 port 48956
+Oct 19 03:36:07 highbanner sshd[122]: Invalid user elms from 10.0.3.1 port 48956
+Oct 19 03:36:08 highbanner sshd[122]: pam_unix(sshd:auth): check pass; user unknown
+Oct 19 03:36:08 highbanner sshd[122]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.3.1 
+Oct 19 03:36:08 highbanner sshd[122]: pam_unix(sshd:auth): check pass; user unknown
+Oct 19 03:36:08 highbanner sshd[122]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.3.1 
+Oct 19 03:36:10 highbanner sshd[122]: Failed password for invalid user elms from 10.0.3.1 port 48956 ssh2
+Oct 19 03:36:10 highbanner sshd[122]: Failed password for invalid user elms from 10.0.3.1 port 48956 ssh2
+Oct 19 03:36:13 highbanner sshd[122]: pam_unix(sshd:auth): check pass; user unknown
+Oct 19 03:36:13 highbanner sshd[122]: pam_unix(sshd:auth): check pass; user unknown
+Oct 19 03:36:15 highbanner sshd[122]: Failed password for invalid user elms from 10.0.3.1 port 48956 ssh2
+Oct 19 03:36:15 highbanner sshd[122]: Failed password for invalid user elms from 10.0.3.1 port 48956 ssh2
+Oct 19 03:36:19 highbanner sshd[122]: Connection closed by invalid user elms 10.0.3.1 port 48956 [preauth]
+Oct 19 03:36:19 highbanner sshd[122]: PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.3.1 
+Oct 19 03:36:19 highbanner sshd[122]: Connection closed by invalid user elms 10.0.3.1 port 48956 [preauth]
+Oct 19 03:36:19 highbanner sshd[122]: PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.3.1 
+Oct 19 03:37:47 highbanner sshd[124]: Accepted password for user from 10.0.3.1 port 49242 ssh2
+Oct 19 03:37:47 highbanner sshd[124]: Accepted password for user from 10.0.3.1 port 49242 ssh2
+Oct 19 03:37:47 highbanner sshd[124]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 03:37:47 highbanner sshd[124]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 03:37:47 highbanner systemd-logind[103]: New session 567 of user user.
+Oct 19 03:37:47 highbanner systemd-logind[103]: New session 567 of user user.
+Oct 19 03:37:47 highbanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 03:37:47 highbanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 03:37:50 highbanner sshd[149]: Received disconnect from 10.0.3.1 port 49242:11: disconnected by user
+Oct 19 03:37:50 highbanner sshd[149]: Disconnected from user user 10.0.3.1 port 49242
+Oct 19 03:37:50 highbanner sshd[124]: pam_unix(sshd:session): session closed for user user
+Oct 19 03:37:50 highbanner sshd[149]: Received disconnect from 10.0.3.1 port 49242:11: disconnected by user
+Oct 19 03:37:50 highbanner sshd[149]: Disconnected from user user 10.0.3.1 port 49242
+Oct 19 03:37:50 highbanner sshd[124]: pam_unix(sshd:session): session closed for user user
+Oct 19 03:37:50 highbanner systemd-logind[103]: Session 567 logged out. Waiting for processes to exit.
+Oct 19 03:37:50 highbanner systemd-logind[103]: Session 567 logged out. Waiting for processes to exit.
+Oct 19 03:37:50 highbanner systemd-logind[103]: Removed session 567.
+Oct 19 03:37:50 highbanner systemd-logind[103]: Removed session 567.
+Oct 19 03:38:00 highbanner systemd: pam_unix(systemd-user:session): session closed for user user
+Oct 19 03:38:00 highbanner systemd: pam_unix(systemd-user:session): session closed for user user

@@ -1,0 +1,146 @@
+Oct 18 19:22:29 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:22:29 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:22:30 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 18 19:22:30 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:23:04 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:23:04 templatemedbanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 18 20:17:01 templatemedbanner CRON[8927]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 20:17:01 templatemedbanner CRON[8927]: pam_unix(cron:session): session closed for user root
+Oct 18 21:17:01 templatemedbanner CRON[8934]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 21:17:01 templatemedbanner CRON[8934]: pam_unix(cron:session): session closed for user root
+Oct 18 21:58:48 medbanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 18 21:58:48 medbanner sshd[110]: Server listening on :: port 22.
+Oct 18 21:58:48 medbanner systemd-logind[104]: New seat seat0.
+Oct 19 02:21:22 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 02:21:22 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:21:22 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:21:22 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 02:21:22 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:21:23 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:21:23 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 02:21:23 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:21:59 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:21:59 templatemedbanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 02:25:11 medbanner systemd-logind[104]: New seat seat0.
+Oct 19 02:25:11 medbanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 02:25:11 medbanner sshd[111]: Server listening on :: port 22.
+Oct 19 03:03:22 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:03:22 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:03:22 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:03:22 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:03:22 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:03:23 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:03:23 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:03:23 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:04:00 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:04:00 templatemedbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:04:09 medbanner systemd-logind[104]: New seat seat0.
+Oct 19 03:04:09 medbanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:04:09 medbanner sshd[111]: Server listening on :: port 22.
+Oct 19 03:10:01 medbanner CRON[123]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:10:01 medbanner CRON[123]: pam_unix(cron:session): session closed for user root
+Oct 19 03:17:01 medbanner CRON[134]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:17:01 medbanner CRON[134]: pam_unix(cron:session): session closed for user root
+Oct 19 03:31:15 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:31:15 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:31:16 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:31:16 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:31:16 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:31:16 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:31:17 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:31:17 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:31:56 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:31:56 templatemedbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:22 medbanner systemd-logind[104]: New seat seat0.
+Oct 19 03:33:22 medbanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:22 medbanner sshd[111]: Server listening on :: port 22.
+Oct 19 03:31:16 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:31:16 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:31:16 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:31:17 templatemedbanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:31:17 templatemedbanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:31:56 templatemedbanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:31:56 templatemedbanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:22 medbanner systemd-logind[104]: New seat seat0.
+Oct 19 03:33:22 medbanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:22 medbanner sshd[111]: Server listening on :: port 22.
+Oct 19 04:17:01 medbanner CRON[126]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 04:17:01 medbanner CRON[126]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 04:17:01 medbanner CRON[126]: pam_unix(cron:session): session closed for user root
+Oct 19 04:17:01 medbanner CRON[126]: pam_unix(cron:session): session closed for user root
+Oct 19 05:17:01 medbanner CRON[140]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 05:17:01 medbanner CRON[140]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 05:17:01 medbanner CRON[140]: pam_unix(cron:session): session closed for user root
+Oct 19 05:17:01 medbanner CRON[140]: pam_unix(cron:session): session closed for user root
+Oct 19 06:17:01 medbanner CRON[206]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:17:01 medbanner CRON[206]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:17:01 medbanner CRON[206]: pam_unix(cron:session): session closed for user root
+Oct 19 06:17:01 medbanner CRON[206]: pam_unix(cron:session): session closed for user root
+Oct 19 06:25:01 medbanner CRON[211]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:25:01 medbanner CRON[211]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:25:01 medbanner CRON[211]: pam_unix(cron:session): session closed for user root
+Oct 19 06:25:01 medbanner CRON[211]: pam_unix(cron:session): session closed for user root
+Oct 19 07:17:01 medbanner CRON[261]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 07:17:01 medbanner CRON[261]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 07:17:01 medbanner CRON[261]: pam_unix(cron:session): session closed for user root
+Oct 19 07:17:01 medbanner CRON[261]: pam_unix(cron:session): session closed for user root
+Oct 19 08:17:01 medbanner CRON[267]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 08:17:01 medbanner CRON[267]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 08:17:01 medbanner CRON[267]: pam_unix(cron:session): session closed for user root
+Oct 19 08:17:01 medbanner CRON[267]: pam_unix(cron:session): session closed for user root
+Oct 19 09:17:01 medbanner CRON[275]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 09:17:01 medbanner CRON[275]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 09:17:01 medbanner CRON[275]: pam_unix(cron:session): session closed for user root
+Oct 19 09:17:01 medbanner CRON[275]: pam_unix(cron:session): session closed for user root
+Oct 19 10:17:01 medbanner CRON[281]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 10:17:01 medbanner CRON[281]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 10:17:01 medbanner CRON[281]: pam_unix(cron:session): session closed for user root
+Oct 19 10:17:01 medbanner CRON[281]: pam_unix(cron:session): session closed for user root
+Oct 19 11:17:01 medbanner CRON[296]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 11:17:01 medbanner CRON[296]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 11:17:01 medbanner CRON[296]: pam_unix(cron:session): session closed for user root
+Oct 19 11:17:01 medbanner CRON[296]: pam_unix(cron:session): session closed for user root
+Oct 19 12:17:01 medbanner CRON[353]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 12:17:01 medbanner CRON[353]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 12:17:01 medbanner CRON[353]: pam_unix(cron:session): session closed for user root
+Oct 19 12:17:01 medbanner CRON[353]: pam_unix(cron:session): session closed for user root
+Oct 19 13:17:01 medbanner CRON[359]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 13:17:01 medbanner CRON[359]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 13:17:01 medbanner CRON[359]: pam_unix(cron:session): session closed for user root
+Oct 19 13:17:01 medbanner CRON[359]: pam_unix(cron:session): session closed for user root
+Oct 19 14:17:01 medbanner CRON[365]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 14:17:01 medbanner CRON[365]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 14:17:01 medbanner CRON[365]: pam_unix(cron:session): session closed for user root
+Oct 19 14:17:01 medbanner CRON[365]: pam_unix(cron:session): session closed for user root
+Oct 19 15:17:01 medbanner CRON[371]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 15:17:01 medbanner CRON[371]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 15:17:01 medbanner CRON[371]: pam_unix(cron:session): session closed for user root
+Oct 19 15:17:01 medbanner CRON[371]: pam_unix(cron:session): session closed for user root
+Oct 19 16:17:01 medbanner CRON[377]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 16:17:01 medbanner CRON[377]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 16:17:01 medbanner CRON[377]: pam_unix(cron:session): session closed for user root
+Oct 19 16:17:01 medbanner CRON[377]: pam_unix(cron:session): session closed for user root
+Oct 19 17:17:01 medbanner CRON[384]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 17:17:01 medbanner CRON[384]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 17:17:01 medbanner CRON[384]: pam_unix(cron:session): session closed for user root
+Oct 19 17:17:01 medbanner CRON[384]: pam_unix(cron:session): session closed for user root
+Oct 19 18:17:01 medbanner CRON[399]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 18:17:01 medbanner CRON[399]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 18:17:01 medbanner CRON[399]: pam_unix(cron:session): session closed for user root
+Oct 19 18:17:01 medbanner CRON[399]: pam_unix(cron:session): session closed for user root
+Oct 19 19:17:01 medbanner CRON[405]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 19:17:01 medbanner CRON[405]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 19:17:01 medbanner CRON[405]: pam_unix(cron:session): session closed for user root
+Oct 19 19:17:01 medbanner CRON[405]: pam_unix(cron:session): session closed for user root
+Oct 19 20:17:01 medbanner CRON[411]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 20:17:01 medbanner CRON[411]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 20:17:01 medbanner CRON[411]: pam_unix(cron:session): session closed for user root
+Oct 19 20:17:01 medbanner CRON[411]: pam_unix(cron:session): session closed for user root
+Oct 19 21:17:01 medbanner CRON[417]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 21:17:01 medbanner CRON[417]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 21:17:01 medbanner CRON[417]: pam_unix(cron:session): session closed for user root
+Oct 19 21:17:01 medbanner CRON[417]: pam_unix(cron:session): session closed for user root
+Oct 19 22:17:01 medbanner CRON[424]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 22:17:01 medbanner CRON[424]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 22:17:01 medbanner CRON[424]: pam_unix(cron:session): session closed for user root
+Oct 19 22:17:01 medbanner CRON[424]: pam_unix(cron:session): session closed for user root

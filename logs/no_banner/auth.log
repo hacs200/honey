@@ -1,0 +1,271 @@
+Oct 18 19:20:23 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:20:23 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:20:23 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 18 19:20:23 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 18 19:21:02 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 18 19:21:02 templatenobanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 18 20:17:01 templatenobanner CRON[8927]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 20:17:01 templatenobanner CRON[8927]: pam_unix(cron:session): session closed for user root
+Oct 18 21:17:01 templatenobanner CRON[8934]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 18 21:17:01 templatenobanner CRON[8934]: pam_unix(cron:session): session closed for user root
+Oct 18 21:58:30 nobanner systemd-logind[104]: New seat seat0.
+Oct 18 21:58:30 nobanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 18 21:58:30 nobanner sshd[110]: Server listening on :: port 22.
+Oct 19 02:19:14 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 02:19:14 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:19:14 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:19:14 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 02:19:14 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:19:15 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:19:15 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 02:19:15 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 02:19:50 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 02:19:50 templatenobanner snoopy[8912]: [uid:0 sid:8912 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 02:25:38 nobanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 02:25:38 nobanner sshd[111]: Server listening on :: port 22.
+Oct 19 02:25:38 nobanner systemd-logind[105]: New seat seat0.
+Oct 19 03:02:21 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:02:21 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:02:22 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:02:22 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:02:22 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:02:22 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:02:23 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:02:23 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:02:59 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:02:59 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:04:37 nobanner systemd-logind[105]: New seat seat0.
+Oct 19 03:04:37 nobanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:04:37 nobanner sshd[111]: Server listening on :: port 22.
+Oct 19 03:10:01 nobanner CRON[123]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:10:01 nobanner CRON[123]: pam_unix(cron:session): session closed for user root
+Oct 19 03:17:01 nobanner CRON[126]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 03:17:01 nobanner CRON[126]: pam_unix(cron:session): session closed for user root
+Oct 19 03:21:21 nobanner sshd[138]: Accepted password for elms from 10.0.3.1 port 56666 ssh2
+Oct 19 03:21:21 nobanner sshd[138]: pam_unix(sshd:session): session opened for user elms by (uid=0)
+Oct 19 03:21:21 nobanner systemd-logind[105]: New session 567 of user elms.
+Oct 19 03:21:21 nobanner systemd: pam_unix(systemd-user:session): session opened for user elms by (uid=0)
+Oct 19 03:23:10 nobanner sshd[156]: Received disconnect from 10.0.3.1 port 56666:11: disconnected by user
+Oct 19 03:23:10 nobanner sshd[156]: Disconnected from user elms 10.0.3.1 port 56666
+Oct 19 03:23:10 nobanner sshd[138]: pam_unix(sshd:session): session closed for user elms
+Oct 19 03:23:10 nobanner systemd-logind[105]: Session 567 logged out. Waiting for processes to exit.
+Oct 19 03:23:10 nobanner systemd-logind[105]: Removed session 567.
+Oct 19 03:23:20 nobanner systemd: pam_unix(systemd-user:session): session closed for user elms
+Oct 19 03:32:17 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/systemctl enable ssh --now
+Oct 19 03:32:17 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:32:18 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:32:18 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:32:53 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:32:53 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:31 nobanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:31 nobanner sshd[110]: Server listening on :: port 22.
+Oct 19 03:33:31 nobanner systemd-logind[105]: New seat seat0.
+Oct 19 03:32:18 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:32:18 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 03:32:18 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 03:32:53 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 03:32:53 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 03:33:31 nobanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 19 03:33:31 nobanner sshd[110]: Server listening on :: port 22.
+Oct 19 03:33:31 nobanner systemd-logind[105]: New seat seat0.
+Oct 19 04:17:01 nobanner CRON[144]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 04:17:01 nobanner CRON[144]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 04:17:01 nobanner CRON[144]: pam_unix(cron:session): session closed for user root
+Oct 19 04:17:01 nobanner CRON[144]: pam_unix(cron:session): session closed for user root
+Oct 19 05:17:01 nobanner CRON[150]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 05:17:01 nobanner CRON[150]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 05:17:01 nobanner CRON[150]: pam_unix(cron:session): session closed for user root
+Oct 19 05:17:01 nobanner CRON[150]: pam_unix(cron:session): session closed for user root
+Oct 19 06:17:01 nobanner CRON[156]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:17:01 nobanner CRON[156]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:17:01 nobanner CRON[156]: pam_unix(cron:session): session closed for user root
+Oct 19 06:17:01 nobanner CRON[156]: pam_unix(cron:session): session closed for user root
+Oct 19 06:25:01 nobanner CRON[161]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:25:01 nobanner CRON[161]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 06:25:01 nobanner CRON[161]: pam_unix(cron:session): session closed for user root
+Oct 19 06:25:01 nobanner CRON[161]: pam_unix(cron:session): session closed for user root
+Oct 19 07:17:01 nobanner CRON[271]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 07:17:01 nobanner CRON[271]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 07:17:01 nobanner CRON[271]: pam_unix(cron:session): session closed for user root
+Oct 19 07:17:01 nobanner CRON[271]: pam_unix(cron:session): session closed for user root
+Oct 19 08:17:01 nobanner CRON[277]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 08:17:01 nobanner CRON[277]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 08:17:01 nobanner CRON[277]: pam_unix(cron:session): session closed for user root
+Oct 19 08:17:01 nobanner CRON[277]: pam_unix(cron:session): session closed for user root
+Oct 19 09:17:01 nobanner CRON[283]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 09:17:01 nobanner CRON[283]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 09:17:01 nobanner CRON[283]: pam_unix(cron:session): session closed for user root
+Oct 19 09:17:01 nobanner CRON[283]: pam_unix(cron:session): session closed for user root
+Oct 19 10:17:01 nobanner CRON[289]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 10:17:01 nobanner CRON[289]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 10:17:01 nobanner CRON[289]: pam_unix(cron:session): session closed for user root
+Oct 19 10:17:01 nobanner CRON[289]: pam_unix(cron:session): session closed for user root
+Oct 19 11:17:01 nobanner CRON[305]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 11:17:01 nobanner CRON[305]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 11:17:01 nobanner CRON[305]: pam_unix(cron:session): session closed for user root
+Oct 19 11:17:01 nobanner CRON[305]: pam_unix(cron:session): session closed for user root
+Oct 19 12:17:01 nobanner CRON[311]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 12:17:01 nobanner CRON[311]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 12:17:01 nobanner CRON[311]: pam_unix(cron:session): session closed for user root
+Oct 19 12:17:01 nobanner CRON[311]: pam_unix(cron:session): session closed for user root
+Oct 19 13:17:01 nobanner CRON[317]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 13:17:01 nobanner CRON[317]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 13:17:01 nobanner CRON[317]: pam_unix(cron:session): session closed for user root
+Oct 19 13:17:01 nobanner CRON[317]: pam_unix(cron:session): session closed for user root
+Oct 19 14:17:01 nobanner CRON[323]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 14:17:01 nobanner CRON[323]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 14:17:01 nobanner CRON[323]: pam_unix(cron:session): session closed for user root
+Oct 19 14:17:01 nobanner CRON[323]: pam_unix(cron:session): session closed for user root
+Oct 19 15:17:01 nobanner CRON[329]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 15:17:01 nobanner CRON[329]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 15:17:01 nobanner CRON[329]: pam_unix(cron:session): session closed for user root
+Oct 19 15:17:01 nobanner CRON[329]: pam_unix(cron:session): session closed for user root
+Oct 19 16:17:01 nobanner CRON[385]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 16:17:01 nobanner CRON[385]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 16:17:01 nobanner CRON[385]: pam_unix(cron:session): session closed for user root
+Oct 19 16:17:01 nobanner CRON[385]: pam_unix(cron:session): session closed for user root
+Oct 19 17:17:01 nobanner CRON[401]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 17:17:01 nobanner CRON[401]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 17:17:01 nobanner CRON[401]: pam_unix(cron:session): session closed for user root
+Oct 19 17:17:01 nobanner CRON[401]: pam_unix(cron:session): session closed for user root
+Oct 19 18:17:01 nobanner CRON[407]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 18:17:01 nobanner CRON[407]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 18:17:01 nobanner CRON[407]: pam_unix(cron:session): session closed for user root
+Oct 19 18:17:01 nobanner CRON[407]: pam_unix(cron:session): session closed for user root
+Oct 19 19:17:01 nobanner CRON[413]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 19:17:01 nobanner CRON[413]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 19:17:01 nobanner CRON[413]: pam_unix(cron:session): session closed for user root
+Oct 19 19:17:01 nobanner CRON[413]: pam_unix(cron:session): session closed for user root
+Oct 19 20:17:01 nobanner CRON[419]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 20:17:01 nobanner CRON[419]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 20:17:01 nobanner CRON[419]: pam_unix(cron:session): session closed for user root
+Oct 19 20:17:01 nobanner CRON[419]: pam_unix(cron:session): session closed for user root
+Oct 19 21:17:01 nobanner CRON[425]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 21:17:01 nobanner CRON[425]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 21:17:01 nobanner CRON[425]: pam_unix(cron:session): session closed for user root
+Oct 19 21:17:01 nobanner CRON[425]: pam_unix(cron:session): session closed for user root
+Oct 19 22:17:01 nobanner CRON[432]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 22:17:01 nobanner CRON[432]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 22:17:01 nobanner CRON[432]: pam_unix(cron:session): session closed for user root
+Oct 19 22:17:01 nobanner CRON[432]: pam_unix(cron:session): session closed for user root
+Oct 19 22:56:27 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 22:56:27 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 22:56:27 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 22:56:28 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 22:56:28 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 22:57:06 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 22:57:06 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 22:57:15 nobanner systemd-logind[104]: New seat seat0.
+Oct 19 22:57:15 nobanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 22:57:15 nobanner sshd[111]: Server listening on :: port 22.
+Oct 19 22:58:15 nobanner sshd[122]: Accepted password for user from 10.0.3.1 port 35028 ssh2
+Oct 19 22:58:15 nobanner sshd[122]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 22:58:15 nobanner systemd-logind[104]: New session 667 of user user.
+Oct 19 22:58:15 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 22:58:24 nobanner sshd[140]: Received disconnect from 10.0.3.1 port 35028:11: disconnected by user
+Oct 19 22:58:24 nobanner sshd[140]: Disconnected from user user 10.0.3.1 port 35028
+Oct 19 22:58:24 nobanner sshd[122]: pam_unix(sshd:session): session closed for user user
+Oct 19 22:58:24 nobanner systemd-logind[104]: Session 667 logged out. Waiting for processes to exit.
+Oct 19 22:58:24 nobanner systemd-logind[104]: Removed session 667.
+Oct 19 23:00:51 nobanner sshd[157]: Accepted password for user from 10.0.3.1 port 59012 ssh2
+Oct 19 23:00:51 nobanner sshd[157]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:00:51 nobanner systemd-logind[104]: New session 667 of user user.
+Oct 19 23:00:51 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:00:55 nobanner sshd[175]: Received disconnect from 10.0.3.1 port 59012:11: disconnected by user
+Oct 19 23:00:55 nobanner sshd[175]: Disconnected from user user 10.0.3.1 port 59012
+Oct 19 23:00:55 nobanner sshd[157]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:00:55 nobanner systemd-logind[104]: Session 667 logged out. Waiting for processes to exit.
+Oct 19 23:00:55 nobanner systemd-logind[104]: Removed session 667.
+Oct 19 23:01:43 nobanner sshd[190]: Accepted password for user from 10.0.3.1 port 44128 ssh2
+Oct 19 23:01:43 nobanner sshd[190]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:01:43 nobanner systemd-logind[104]: New session 667 of user user.
+Oct 19 23:01:43 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:02:04 nobanner sshd[208]: Received disconnect from 10.0.3.1 port 44128:11: disconnected by user
+Oct 19 23:02:04 nobanner sshd[208]: Disconnected from user user 10.0.3.1 port 44128
+Oct 19 23:02:04 nobanner sshd[190]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:02:04 nobanner systemd-logind[104]: Session 667 logged out. Waiting for processes to exit.
+Oct 19 23:02:04 nobanner systemd-logind[104]: Removed session 667.
+Oct 19 23:04:50 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 23:04:50 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:04:51 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:04:51 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 23:04:51 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:05:30 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:05:30 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 23:05:40 nobanner systemd-logind[104]: New seat seat0.
+Oct 19 23:05:40 nobanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 23:05:40 nobanner sshd[111]: Server listening on :: port 22.
+Oct 19 23:06:32 nobanner sshd[122]: Accepted password for user from 10.0.3.1 port 42482 ssh2
+Oct 19 23:06:32 nobanner sshd[122]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:06:32 nobanner systemd-logind[104]: New session 660 of user user.
+Oct 19 23:06:32 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:06:34 nobanner sshd[140]: Received disconnect from 10.0.3.1 port 42482:11: disconnected by user
+Oct 19 23:06:34 nobanner sshd[140]: Disconnected from user user 10.0.3.1 port 42482
+Oct 19 23:06:34 nobanner sshd[122]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:06:34 nobanner systemd-logind[104]: Session 660 logged out. Waiting for processes to exit.
+Oct 19 23:06:34 nobanner systemd-logind[104]: Removed session 660.
+Oct 19 23:11:31 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 23:11:31 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:11:32 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:11:32 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 23:11:32 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:12:08 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:12:08 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 23:12:16 nobanner systemd-logind[105]: New seat seat0.
+Oct 19 23:12:16 nobanner sshd[110]: Server listening on 0.0.0.0 port 22.
+Oct 19 23:12:16 nobanner sshd[110]: Server listening on :: port 22.
+Oct 19 23:17:01 nobanner CRON[122]: pam_unix(cron:session): session opened for user root by (uid=0)
+Oct 19 23:17:01 nobanner CRON[122]: pam_unix(cron:session): session closed for user root
+Oct 19 23:18:56 nobanner sshd[126]: Connection closed by 10.0.3.1 port 47346 [preauth]
+Oct 19 23:19:35 nobanner sshd[128]: Accepted password for user from 10.0.3.1 port 46582 ssh2
+Oct 19 23:19:35 nobanner sshd[128]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:19:35 nobanner systemd-logind[105]: New session 660 of user user.
+Oct 19 23:19:35 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:19:36 nobanner sshd[146]: Received disconnect from 10.0.3.1 port 46582:11: disconnected by user
+Oct 19 23:19:36 nobanner sshd[146]: Disconnected from user user 10.0.3.1 port 46582
+Oct 19 23:19:36 nobanner sshd[128]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:19:36 nobanner systemd-logind[105]: Session 660 logged out. Waiting for processes to exit.
+Oct 19 23:19:36 nobanner systemd-logind[105]: Removed session 660.
+Oct 19 23:36:58 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=/usr/bin/apt-get install wget -y
+Oct 19 23:36:58 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:36:58 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:36:59 templatenobanner sudo:     root : TTY=pts/5 ; PWD=/ ; USER=root ; COMMAND=./install-snoopy.sh stable
+Oct 19 23:36:59 templatenobanner sudo: pam_unix(sudo:session): session opened for user root by (uid=0)
+Oct 19 23:37:32 templatenobanner sudo: pam_unix(sudo:session): session closed for user root
+Oct 19 23:37:32 templatenobanner snoopy[8918]: [uid:0 sid:8918 tty:/dev/pts/5 cwd:/ filename:/usr/bin/rm]: rm -rf ./install-snoopy.log ./install-snoopy.sh snoopy-2.5.1 snoopy-2.5.1.tar.gz
+Oct 19 23:37:40 nobanner systemd-logind[103]: New seat seat0.
+Oct 19 23:37:40 nobanner sshd[111]: Server listening on 0.0.0.0 port 22.
+Oct 19 23:37:40 nobanner sshd[111]: Server listening on :: port 22.
+Oct 19 23:39:10 nobanner sshd[122]: Accepted password for user from 10.0.3.1 port 37106 ssh2
+Oct 19 23:39:10 nobanner sshd[122]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:39:10 nobanner systemd-logind[103]: New session 5 of user user.
+Oct 19 23:39:10 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:39:13 nobanner sshd[140]: Received disconnect from 10.0.3.1 port 37106:11: disconnected by user
+Oct 19 23:39:13 nobanner sshd[140]: Disconnected from user user 10.0.3.1 port 37106
+Oct 19 23:39:13 nobanner sshd[122]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:39:13 nobanner systemd-logind[103]: Session 5 logged out. Waiting for processes to exit.
+Oct 19 23:39:13 nobanner systemd-logind[103]: Removed session 5.
+Oct 19 23:45:59 nobanner sshd[147]: Invalid user student from 172.30.141.213 port 45388
+Oct 19 23:46:03 nobanner sshd[147]: Connection closed by invalid user student 172.30.141.213 port 45388 [preauth]
+Oct 19 23:46:03 nobanner sshd[149]: Invalid user student from 172.30.141.213 port 41920
+Oct 19 23:46:04 nobanner sshd[149]: Connection closed by invalid user student 172.30.141.213 port 41920 [preauth]
+Oct 19 23:46:12 nobanner sshd[151]: Accepted password for user from 172.30.141.213 port 38340 ssh2
+Oct 19 23:46:12 nobanner sshd[151]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:46:12 nobanner systemd-logind[103]: New session 5 of user user.
+Oct 19 23:46:12 nobanner systemd: pam_unix(systemd-user:session): session opened for user user by (uid=0)
+Oct 19 23:47:45 nobanner sshd[174]: Accepted password for user from 10.205.191.18 port 61538 ssh2
+Oct 19 23:47:45 nobanner sshd[174]: pam_unix(sshd:session): session opened for user user by (uid=0)
+Oct 19 23:47:45 nobanner systemd-logind[103]: Existing logind session ID 5 used by new audit session, ignoring.
+Oct 19 23:47:45 nobanner systemd-logind[103]: New session c1 of user user.
+Oct 19 23:49:29 nobanner sshd[186]: Received disconnect from 10.205.191.18 port 61538:11: disconnected by user
+Oct 19 23:49:29 nobanner sshd[186]: Disconnected from user user 10.205.191.18 port 61538
+Oct 19 23:49:29 nobanner sshd[174]: pam_unix(sshd:session): session closed for user user
+Oct 19 23:49:29 nobanner systemd-logind[103]: Session c1 logged out. Waiting for processes to exit.
+Oct 19 23:49:29 nobanner systemd-logind[103]: Removed session c1.
+Oct 19 23:52:16 nobanner sshd[194]: Connection closed by authenticating user user 172.30.141.213 port 50282 [preauth]
