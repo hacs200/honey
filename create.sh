@@ -6,7 +6,9 @@ sudo ./delete.sh
 names=( "template_no_banner" "template_low_banner" "template_med_banner" "template_high_banner" )
 arr=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
 arr=( $(shuf -e "${arr[@]}")) 
-pots=( "no_banner" "low_banner" "med_banner" "high_banner" ) 
+pots=( "no_banner" "low_banner" "med_banner" "high_banner" )
+mitm_ports=( "10000" "20000" "30000" "40000" )
+ 
 sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 sudo sysctl -w net.ipv4.ip_forward=1
 
@@ -65,7 +67,8 @@ do
 	echo "$pot: $container_ip, external: $ip"
 	
 	mitm_path="/home/honey/logs/$pot"
-	port=6500
+	#port=6500
+	port=${mitm_ports[$j]}
 	sudo forever -l $mitm_path/$container_ip.log --append start /home/honey/MITM/mitm.js -n $pot -i $container_ip -p $port --auto-access --auto-access-fixed 3 --debug
 	
 	# SET UP COPY's FIREWALL RULES
