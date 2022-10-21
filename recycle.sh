@@ -49,6 +49,6 @@ sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $
 sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
 
 # start tailing on new container
-sudo ./tailing.sh $new_name $(date "+%F-%H-%M-%S")
+sudo /home/honey/tailing.sh $new_name $(date "+%F-%H-%M-%S")
 
 exit 0
