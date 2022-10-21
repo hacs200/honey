@@ -12,7 +12,7 @@ scenario=$(echo $1 | cut -d '_' -f1,2)
 ip=$(echo $1 | cut -d '_' -f3)
 
 # copy contents of container's auth.log to host
-sudo tail -f /var/lib/lxc/${container}/rootfs/var/log/auth.log >> /home/honey/logs/${scenario}/${datetime}_${container}.log &
+tail -f /var/lib/lxc/${container}/rootfs/var/log/auth.log >> /home/honey/logs/${scenario}/${datetime}_${container}.log &
 tailpid=$!
 
 echo "ip: $ip, tail: $tailpid"
