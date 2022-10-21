@@ -7,20 +7,15 @@ The recycling script relies on creating copies of our honeypot templates. We hav
 In order to create these honeypot templates, we have a script called <code>create.sh</code>.
 
 ### <code>create.sh</code>
-This script takes in 4 arguments:
-  <ol>
-    <li> Container name </li>
-    <li> External IP address </li>
-    <li> External network netmask prefix </li>
-    <li> Name of the banner message file </li>
-  </ol>
+This script takes in no argument. It creates each of the honeypot templates as well as the first set copies, randomly assigning them to each of the four IP addresses given to us. It configures firewall rules following DIT firewall rules, leaving port 22 open for SSH purposes. The templates are named as <code>template_{banner scenario}<\code>. The copies of each container are named as <code>{scenario}_{external ip}<\code>.
   
 ## Data Collection
 
 ### <code>tailing.sh</code>
-This script takes one argument, the name of the container for which the <code>auth.log</code> should be tailed. This process is run in the background and output to <code>logs/{container_name}/auth.log</code>.
+This script takes one argument, the name of the container for which the <code>auth.log</code> should be tailed. This process is run in the background and outputs to <code>logs/{banner scenario}/{date/time_containername}.log<\code>. The containername used to name the file contains the public facing IP and the scenario name.
 
 ### <code>data_collection.sh</code>
+#### THE USE OF THIS SCRIPT IS DEPRECATED. IT MUST BE UPDATED TO CORRECTLY PARSE DATA.
 This script takes one argument, the name of the container for which data should be collected.
 
 Using the name, the script determines if the container's Snoopy log has been deleted. If not, it copies the log to the host machine. If it has been deleted, it outputs "LOG DELETED" to the file where the Snoopy log would otherwise be stored on the host machine, at <code>logs/{container_name}/snoopy.log</code>.
@@ -28,6 +23,7 @@ Using the name, the script determines if the container's Snoopy log has been del
 This script then calls <code>data_collection.sh</code>
 
 ### <code>data_collection.py</code>
+#### THE USE OF THIS SCRIPT IS DEPRECATED. IT MUST BE UPDATED TO CORRECTLY PARSE DATA.
 This script takes one argument, the name of the container for which data should be collected.
 
 Using the name, the script finds all IP addresses that have connected successfully to the host and stores the final one in <code>data/{container_name}/last_ip_address.txt</code> on the host machine.
@@ -38,6 +34,7 @@ The script takes a log of all commands the attacker used and outputs them to <co
 
 ## Recycling
 ### <code>recycle.sh</code>
+#### This portion needs to be updated.
 This script takes one argument, the file path to the file containing the last connected IP address.
 
 Using the file path, the script is able to identify which of the 4 honeypot instantiations needs to be recycled. The script then kills the correct honeypot container and creates a new copy of the honeypot using the appropriate honeypot template.
@@ -46,4 +43,5 @@ Using the file path, the script is able to identify which of the 4 honeypot inst
 We have a master script called <code>master_script.sh</code> which is called each time an attacker disconnects from one of our honeypots.
 
 ### <code>master_script.sh</code>
+#### This portion needs to be updated.
 This script simply calls both <code>data_collection.sh</code> and <code>recycle.sh</code> with the appropriate parameters. This collects all necessary data from the container which the atacker just disconnected from before then recycling said container.
