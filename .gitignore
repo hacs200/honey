@@ -1,4 +1,5 @@
 node_modules/
 MITM/
 data/
+logs/
 test.txt
