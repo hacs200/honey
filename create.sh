@@ -11,7 +11,7 @@ scenarios=( "no_banner" "low_banner" "med_banner" "high_banner" )
 sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 sudo sysctl -w net.ipv4.ip_forward=1
 
-LENGTH=1
+LENGTH=4
 for ((j = 0 ; j < $LENGTH; j++));
 do
 	
