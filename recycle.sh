@@ -38,6 +38,8 @@ sudo lxc-copy -n template_${new_scenario} -N $new_name
 sudo lxc-start -n $new_name
 sudo sleep 30
 
+sudo lxc-attach -n $n -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
+
 new_container_ip=$(sudo lxc-info -n $new_name -iH)
 mask=32
 echo "$new_name: $container_ip, external: $ext_ip"
