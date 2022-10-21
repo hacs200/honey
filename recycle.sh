@@ -14,7 +14,7 @@ container_ip=$(sudo lxc-info -n $name -iH)
 tail_pid=$(cat logs/${scenario}/${ext_ip}_tail.txt)
 
 echo "*******************************************************************"
-echo "RECYCLE SCRIPT TRIGGERED"
+echo "                     RECYCLE SCRIPT TRIGGERED"
 echo "*******************************************************************"
 # kill tail process
 sudo kill $tail_pid
@@ -30,24 +30,13 @@ sudo lxc-destroy -n $name
 # pick a random scenario
 scenarios=( "no_banner" "low_banner" "med_banner" "high_banner" )
 scenarios=( $(shuf -e "${scenarios[@]}"))
-#new_scenario=${scenarios[0]}
-new_scenario="no_banner"
+new_scenario=${scenarios[0]}
 new_name="${new_scenario}_${ext_ip}"
 
 # make new container
 sudo lxc-copy -n template_${scenario} -N $new_name
 sudo lxc-start -n $new_name
 sudo sleep 30
-
-#sudo lxc-attach -n $new_name -- bash -c "sudo apt-get update"
-#sudo lxc-attach -n $new_name -- bash -c "sudo apt-get install openssh-server -y"
-#sudo lxc-attach -n $new_name -- bash -c "sudo systemctl enable ssh --now"
-
-#sudo lxc-attach -n $new_name -- bash -c "sudo apt-get install wget -y"
-#sudo lxc-attach -n $new_name -- bash -c "wget -O install-snoopy.sh https://github.com/a2o/snoopy/raw/install/install/install-snoopy.sh"
-#sudo lxc-attach -n $new_name -- bash -c "chmod 755 install-snoopy.sh"
-#sudo lxc-attach -n $new_name -- bash -c "sudo ./install-snoopy.sh stable"
-#udo lxc-attach -n $new_name -- bash -c "rm -rf ./install-snoopy.* snoopy-*"
 
 new_container_ip=$(sudo lxc-info -n $new_name -iH)
 mask=32
