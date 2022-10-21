@@ -46,7 +46,7 @@ do
 	sudo lxc-attach -n $template -- bash -c "sudo systemctl enable ssh --now"
 
 	# ADD HONEY TO TEMPLATE
-	sudo cp -r /home/honey/fall2021 /home/honey/spring2022 /var/lib/lxc/$template/rootfs/home/user
+	sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/$template/rootfs/home/user
 
 	# INSTALL SNOOPY KEYLOGGER
 	# logs to /var/log/snoopy.log within the container
@@ -59,7 +59,7 @@ do
 	sudo lxc-attach -n $template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
 
 	# ADD WARNING BANNER
-	cat "/home/honey/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$template/rootfs/etc/motd > /dev/null
+	cat "/home/honey/static/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$template/rootfs/etc/motd > /dev/null
 	sudo lxc-stop -n $template
 		
 	# CREATE HONEYPOT (COPY OF THE TEMPLATE)
