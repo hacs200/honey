@@ -7,12 +7,12 @@ The recycling script relies on creating copies of our honeypot templates. We hav
 In order to create these honeypot templates, we have a script called <code>create.sh</code>.
 
 ### <code>create.sh</code>
-This script takes in no argument. It creates each of the honeypot templates as well as the first set copies, randomly assigning them to each of the four IP addresses given to us. It configures firewall rules following DIT firewall rules, leaving port 22 open for SSH purposes. The templates are named as <code>template_{banner scenario}<\code>. The copies of each container are named as <code>{scenario}_{external ip}<\code>.
+This script takes in no argument. It creates each of the honeypot templates as well as the first set copies, randomly assigning them to each of the four IP addresses given to us. It configures firewall rules following DIT firewall rules, leaving port 22 open for SSH purposes. The templates are named as <code>template_{banner scenario}</code>. The copies of each container are named as <code>{scenario}_{external ip}</code>.
   
 ## Data Collection
 
 ### <code>tailing.sh</code>
-This script takes one argument, the name of the container for which the <code>auth.log</code> should be tailed. This process is run in the background and outputs to <code>logs/{banner scenario}/{date/time_containername}.log<\code>. The containername used to name the file contains the public facing IP and the scenario name.
+This script takes one argument, the name of the container for which the <code>auth.log</code> should be tailed. This process is run in the background and outputs to <code>logs/{banner scenario}/{date/time_containername}.log</code>. The containername used to name the file contains the public facing IP and the scenario name.
 
 ### <code>data_collection.sh</code>
 #### THE USE OF THIS SCRIPT IS DEPRECATED. IT MUST BE UPDATED TO CORRECTLY PARSE DATA.
