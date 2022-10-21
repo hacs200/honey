@@ -39,7 +39,10 @@ do
 	sudo lxc-attach -n $template -- bash -c "echo user:password | sudo chpasswd"
 	
 	# INSTALL SSH
+	sudo lxc-attach -n $template -- bash -c "sudo apt-get update"
+	sleep 10
 	sudo lxc-attach -n $template -- bash -c "sudo apt-get install openssh-server -y"
+	sleep 10
 	sudo lxc-attach -n $template -- bash -c "sudo systemctl enable ssh --now"
 
 	# ADD HONEY TO CONTAINER
@@ -48,12 +51,12 @@ do
 	# INSTALL SNOOPY KEYLOGGER
 	# logs to /var/log/snoopy.log within the container
 	# logs to /var/lib/lxc/$1/rootfs/var/log/snoopy.log on the host system
-	sudo lxc-attach -n $template -- bash -c "sudo apt-get update"
 	sudo lxc-attach -n $template -- bash -c "sudo apt-get install wget -y"
-	sudo lxc-attach -n $template -- bash -c "wget -O install-snoopy.sh https://github.com/a2o/snoopy/raw/install/install/install-snoopy.sh"
-	sudo lxc-attach -n $template -- bash -c  "chmod 755 install-snoopy.sh"
+	sleep 10
+	sudo lxc-attach -n $template -- bash -c "sudo wget -O install-snoopy.sh https://github.com/a2o/snoopy/raw/install/install/install-snoopy.sh"
+	sudo lxc-attach -n $template -- bash -c "sudo chmod 755 install-snoopy.sh"
 	sudo lxc-attach -n $template -- bash -c "sudo ./install-snoopy.sh stable"
-	sudo lxc-attach -n $template -- bash -c "rm -rf ./install-snoopy.* snoopy-*" 
+	sudo lxc-attach -n $template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
 	# sudo lxc-attach -n $n -- bash -c "echo output = file:/var/log/snoopy.log >> /etc/snoopy.ini" 
 
 	# CREATE WARNING BANNER
@@ -63,17 +66,25 @@ do
 	# CREATE INITIAL COPY OF THE TEMPLATE
 	sudo lxc-copy -n $template -N $n
 	sudo lxc-start -n $n
-	sudo sleep 30
-
+	
+	sudo sleep 20
 	# SET UP COPY's FIREWALL RULES
 	container_ip=$(sudo lxc-info -n $n -iH)
-	echo "$n: $container_ip, external: $ext_ip"
+	echo "container: $n, container_ip: $container_ip, external_ip: $ext_ip"
 	
 	# mitm_path="/home/honey/logs/$pot"
 	# port=6500
 	# port=${mitm_ports[$j]}
 	# sudo forever -l $mitm_path/$container_ip.log --id $pot --append start /home/honey/MITM/mitm.js -n $pot -i $container_ip -p $port --auto-access --auto-access-fixed 3 --debug
-	
+
+	#sudo lxc-attach -n $n -- bash -c "sudo apt-get update"
+	#sudo lxc-attach -n $n -- bash -c "sudo apt-get install openssh-server -y"
+	#sudo lxc-attach -n $n -- bash -c "sudo systemctl enable ssh --now"
+	ssh=$(sudo ps aux | grep sshd | wc -l)
+
+	echo "on or off? $ssh"
+
+
 	# SET UP COPY's FIREWALL RULES
 	sudo ip link set enp4s2 up  
 	sudo ip addr add $ext_ip/$mask brd + dev enp4s2
