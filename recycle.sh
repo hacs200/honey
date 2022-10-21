@@ -34,7 +34,7 @@ new_scenario=${scenarios[0]}
 new_name="${new_scenario}_${ext_ip}"
 
 # make new container
-sudo lxc-copy -n template_${scenario} -N $new_name
+sudo lxc-copy -n template_${new_scenario} -N $new_name
 sudo lxc-start -n $new_name
 sudo sleep 30
 
