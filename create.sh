@@ -2,6 +2,7 @@
 
 sudo iptables-restore /home/honey/iptables.txt
 sudo /home/honey/delete.sh
+sudo /home/honey/firewall.sh
 
 templates=( "template_no_banner" "template_low_banner" "template_med_banner" "template_high_banner" )
 ips=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
@@ -79,7 +80,5 @@ do
 	# START HONEYPOT DATA COLLECTION
 	sudo /home/honey/tailing.sh $n $(date "+%F-%H-%M-%S")
 done
-
-sudo /home/honey/firewall.sh
 
 exit 0
