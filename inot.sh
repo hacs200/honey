@@ -13,7 +13,7 @@ while inotifywait -e modify $file; do
 		echo "*******************************************************************"
 		echo "			TRIGGERING RECYCLE SCRIPT"
 		echo "*******************************************************************"
-		sudo ./recycle.sh $container
+		sudo /home/honey/recycle.sh $container
 		exit 0
 	fi
 done
