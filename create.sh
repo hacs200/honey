@@ -45,7 +45,7 @@ do
 	sudo lxc-attach -n $template -- bash -c "sudo systemctl enable ssh --now"
 
 	# ADD HONEY TO TEMPLATE
-	sudo cp -r ./fall2021 ./spring2022 /var/lib/lxc/$template/rootfs/home/user
+	sudo cp -r /home/honey/fall2021 /home/honey/spring2022 /var/lib/lxc/$template/rootfs/home/user
 
 	# INSTALL SNOOPY KEYLOGGER
 	# logs to /var/log/snoopy.log within the container
