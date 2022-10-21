@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo iptables-restore ./iptables.txt
-sudo ./delete.sh
+sudo iptables-restore /home/honey/iptables.txt
+sudo /home/honey/delete.sh
 
 templates=( "template_no_banner" "template_low_banner" "template_med_banner" "template_high_banner" )
 ips=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
@@ -56,10 +56,9 @@ do
 	sudo lxc-attach -n $template -- bash -c "sudo chmod 755 install-snoopy.sh"
 	sudo lxc-attach -n $template -- bash -c "sudo ./install-snoopy.sh stable"
 	sudo lxc-attach -n $template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
-	# sudo lxc-attach -n $n -- bash -c "echo output = file:/var/log/snoopy.log >> /etc/snoopy.ini" 
 
 	# ADD WARNING BANNER
-	cat "warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$template/rootfs/etc/motd > /dev/null
+	cat "/home/honey/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$template/rootfs/etc/motd > /dev/null
 	sudo lxc-stop -n $template
 		
 	# CREATE HONEYPOT (COPY OF THE TEMPLATE)
@@ -78,9 +77,9 @@ do
 	sudo iptables --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip 
 
 	# START HONEYPOT DATA COLLECTION
-	sudo ./tailing.sh $n $(date "+%F-%H-%M-%S")
+	sudo /home/honey/tailing.sh $n $(date "+%F-%H-%M-%S")
 done
 
-sudo ./firewall.sh
+sudo /home/honey/firewall.sh
 
 exit 0
