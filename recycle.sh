@@ -15,8 +15,14 @@ fi
 # extract container name to a variable (name)
 name=`echo $1 | cut -d "/" -f 2`
 
+# kill mitm process for container
+sudo forever stop $name
+
+container_ip=$(sudo lxc-info -n $name -iH)
+
 # shut down and kill container
 sudo lxc-stop -n $name --kill
+sudo lxc-destroy -n $name
 
 # make lxc copy of correct container for appropriate scenario
 sudo lxc-copy -n "template_${name}" -N $name
