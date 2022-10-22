@@ -17,12 +17,13 @@ sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 sudo sysctl -w net.ipv4.ip_forward=1
 
 # ********************** #
-# CREATING BASE TEMPLATE #
+#  CREATE BASE TEMPLATE  #
 # ********************** #
 sudo DOWNLOAD_KEYSERVER="keyserver.ubuntu.com" lxc-create -n template -t download -- -d ubuntu -r focal -a amd64
 sudo lxc-start -n template
 
 
+# ADD USERS
 USERS=9
 for ((j = 0 ; j < $USERS; j++));
 do
@@ -34,6 +35,7 @@ do
 	# ADD HONEY TO TEMPLATE
 	sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/template/rootfs/home/${user}
 done
+sudo lxc-attach -n template -- bash -c "echo root:password | sudo chpasswd"
 
 # INSTALL SSH
 sudo lxc-attach -n template -- bash -c "sudo apt-get update"
@@ -41,6 +43,9 @@ sleep 10
 sudo lxc-attach -n template -- bash -c "sudo apt-get install openssh-server -y"
 sleep 10
 sudo lxc-attach -n template -- bash -c "sudo systemctl enable ssh --now"
+# allow root ssh 
+sudo lxc-attach -n template -- bash -c "echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config"
+sudo lxc-attach -n template -- bash -c "systemctl restart sshd"
 
 # INSTALL SNOOPY KEYLOGGER
 sudo lxc-attach -n template -- bash -c "sudo apt-get install wget -y"
