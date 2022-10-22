@@ -31,17 +31,7 @@ sudo lxc-destroy -n $name
 scenarios=( "no_banner" "low_banner" "med_banner" "high_banner" )
 scenarios=( $(shuf -e "${scenarios[@]}"))
 new_scenario=${scenarios[0]}
-
-if [ `sudo lxc-ls | wc | tr -s ' ' | cut -d ' ' -f3` -lt 8 ]
-then
-        new_scenario="no_banner"
-else
-        new_scenario=${scenarios[0]}
-fi
-
 new_name="${new_scenario}_${ext_ip}"
-
-
 
 # make new container
 sudo lxc-copy -n template_${new_scenario} -N $new_name
