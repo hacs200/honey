@@ -36,6 +36,7 @@ do
 	sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/template/rootfs/home/${user}
 done
 sudo lxc-attach -n template -- bash -c "echo root:password | sudo chpasswd"
+sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/template/rootfs/root
 
 # INSTALL SSH
 sudo lxc-attach -n template -- bash -c "sudo apt-get update"
