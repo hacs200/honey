@@ -31,26 +31,41 @@ sudo lxc-destroy -n $name
 scenarios=( "no_banner" "low_banner" "med_banner" "high_banner" )
 scenarios=( $(shuf -e "${scenarios[@]}"))
 new_scenario=${scenarios[0]}
+
+if [ `sudo lxc-ls | wc | tr -s ' ' | cut -d ' ' -f3` -lt 8 ]
+then
+        new_scenario="no_banner"
+else
+        new_scenario=${scenarios[0]}
+fi
+
 new_name="${new_scenario}_${ext_ip}"
+
+
 
 # make new container
 sudo lxc-copy -n template_${new_scenario} -N $new_name
 sudo lxc-start -n $new_name
 sudo sleep 30
 
-sudo lxc-attach -n $n -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
+# sudo lxc-attach -n $n -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
 
 new_container_ip=$(sudo lxc-info -n $new_name -iH)
 mask=32
 echo "$new_name: $container_ip, external: $ext_ip"
 
 # set up new iptable rules
-sudo ip link set enp4s2 up
-sudo ip addr add $ext_ip/$mask brd + dev enp4s2
-sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $new_container_ip
-sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
+#sudo ip link set enp4s2 up
+#sudo ip addr add $ext_ip/$mask brd + dev enp4s2
+#sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $new_container_ip
+#sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
 
 # start tailing on new container
 sudo /home/honey/tailing.sh $new_name $(date "+%F-%H-%M-%S")
 
+# set up new iptable rules
+sudo ip link set enp4s2 up
+sudo ip addr add $ext_ip/$mask brd + dev enp4s2
+sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $new_container_ip
+sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
 exit 0

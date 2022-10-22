@@ -8,7 +8,7 @@ fi
 file=$1
 container=$2
 
-while inotifywait -e modify $file; do
+while sudo inotifywait -e modify $file; do
 	if cat $1 | grep "Disconnected from user" -q; then
 		echo "*******************************************************************"
 		echo "			TRIGGERING RECYCLE SCRIPT"

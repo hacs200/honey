@@ -1,4 +1,5 @@
 #!/bin/bash
+
 sudo modprobe br_netfilter
 sudo sysctl -p /etc/sysctl.conf
 
@@ -59,7 +60,7 @@ do
 	sudo lxc-attach -n $template -- bash -c "sudo chmod 755 install-snoopy.sh"
 	sudo lxc-attach -n $template -- bash -c "sudo ./install-snoopy.sh stable"
 	sudo lxc-attach -n $template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
-	sudo lxc-attach -n $template -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
+	# sudo lxc-attach -n $template -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
 
 	# ADD WARNING BANNER
 	cat "/home/honey/static/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$template/rootfs/etc/motd > /dev/null
@@ -71,19 +72,25 @@ do
 	
 	sudo sleep 20
 	
-	sudo lxc-attach -n $n -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
+	# sudo lxc-attach -n $n -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
 
 	container_ip=$(sudo lxc-info -n $n -iH)
 	echo "container: $n, container_ip: $container_ip, external_ip: $ext_ip"
+	
+	# SET UP HONEYPOT's FIREWALL RULES
+	#sudo ip link set enp4s2 up  
+	#sudo ip addr add $ext_ip/$mask brd + dev enp4s2
+	#sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $container_ip
+	#sudo iptables --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip 
+
+	# START HONEYPOT DATA COLLECTION
+	sudo /home/honey/tailing.sh $n $(date "+%F-%H-%M-%S")
 	
 	# SET UP HONEYPOT's FIREWALL RULES
 	sudo ip link set enp4s2 up  
 	sudo ip addr add $ext_ip/$mask brd + dev enp4s2
 	sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $container_ip
 	sudo iptables --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip 
-
-	# START HONEYPOT DATA COLLECTION
-	sudo /home/honey/tailing.sh $n $(date "+%F-%H-%M-%S")
 done
 
 exit 0
