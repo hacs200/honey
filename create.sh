@@ -22,13 +22,17 @@ sudo sysctl -w net.ipv4.ip_forward=1
 sudo DOWNLOAD_KEYSERVER="keyserver.ubuntu.com" lxc-create -n template -t download -- -d ubuntu -r focal -a amd64
 sudo lxc-start -n template
 
-# CREATE FAKE USERS
+
 USERS=9
-for ((j = 0 ; j < $LENGTH; j++));
+for ((j = 0 ; j < $USERS; j++));
 do
+	# CREATE USER
 	user=${users[$j]}
 	sudo lxc-attach -n template -- bash -c "sudo useradd -m ${user}"
-	sudo lxc-attach -n template -- bash -c "echo ${user}:password | sudo chpasswd"		
+	sudo lxc-attach -n template -- bash -c "echo ${user}:password | sudo chpasswd"
+
+	# ADD HONEY TO TEMPLATE
+	sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/template/rootfs/home/${user}
 done
 
 # INSTALL SSH
@@ -37,9 +41,6 @@ sleep 10
 sudo lxc-attach -n template -- bash -c "sudo apt-get install openssh-server -y"
 sleep 10
 sudo lxc-attach -n template -- bash -c "sudo systemctl enable ssh --now"
-
-# ADD HONEY TO TEMPLATE
-sudo cp -r /home/honey/static/fall2021 /home/honey/static/spring2022 /var/lib/lxc/template/rootfs/home/user
 
 # INSTALL SNOOPY KEYLOGGER
 sudo lxc-attach -n template -- bash -c "sudo apt-get install wget -y"
