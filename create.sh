@@ -11,6 +11,7 @@ sudo /home/honey/firewall.sh
 ips=( "128.8.238.19" "128.8.238.36" "128.8.238.55" "128.8.238.185")
 ips=( $(shuf -e "${ips[@]}")) 
 scenarios=( "no_banner" "low_banner" "med_banner" "high_banner" )
+users=( "admin" "test" "a" "guest" "user" "oracle" "postgres" "webmaster" "mysql" )
  
 sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 sudo sysctl -w net.ipv4.ip_forward=1
@@ -21,9 +22,14 @@ sudo sysctl -w net.ipv4.ip_forward=1
 sudo DOWNLOAD_KEYSERVER="keyserver.ubuntu.com" lxc-create -n template -t download -- -d ubuntu -r focal -a amd64
 sudo lxc-start -n template
 
-# CREATE FAKE ADMIN USER
-sudo lxc-attach -n template -- bash -c "sudo useradd -m user"
-sudo lxc-attach -n template -- bash -c "echo user:password | sudo chpasswd"
+# CREATE FAKE USERS
+USERS=9
+for ((j = 0 ; j < $LENGTH; j++));
+do
+	user=${users[$j]}
+	sudo lxc-attach -n template -- bash -c "sudo useradd -m ${user}"
+	sudo lxc-attach -n template -- bash -c "echo ${user}:password | sudo chpasswd"		
+done
 
 # INSTALL SSH
 sudo lxc-attach -n template -- bash -c "sudo apt-get update"
