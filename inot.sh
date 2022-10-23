@@ -13,6 +13,7 @@ while sudo inotifywait -e modify $file; do
 		echo "*******************************************************************"
 		echo "			TRIGGERING RECYCLE SCRIPT"
 		echo "*******************************************************************"
+		echo "`date "+%F-%H-%M-%S"`: Triggering recycle script on container $name" >> /home/honey/logs/inot.log
 		sudo /home/honey/recycle.sh $container
 		exit 0
 	fi

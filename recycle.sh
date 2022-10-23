@@ -16,6 +16,7 @@ tail_pid=$(cat logs/${scenario}/${ext_ip}_tail.txt)
 echo "*******************************************************************"
 echo "                     RECYCLE SCRIPT TRIGGERED"
 echo "*******************************************************************"
+
 # kill tail process
 sudo kill $tail_pid
 
@@ -58,4 +59,9 @@ sudo ip link set enp4s2 up
 sudo ip addr add $ext_ip/$mask brd + dev enp4s2
 sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $new_container_ip
 sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
+
+
+echo "`date "+%F-%H-%M-%S"`: Recycled container $name and made container $new_name, tailpid $tail_pid" >> /home/honey/logs/recycle.log
+
+
 exit 0

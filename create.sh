@@ -57,6 +57,8 @@ sudo lxc-attach -n template -- bash -c "sudo ./install-snoopy.sh stable"
 sudo lxc-attach -n template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
 # sudo lxc-attach -n template -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
 
+
+sudo lxc-stop -n template
 # *********************** #
 # CREATE BANNER TEMPLATES #
 # *********************** #
@@ -69,6 +71,7 @@ do
 	
 	# CREATE COPY OF BASE TEMPLATE
 	sudo lxc-copy -n template -N $n
+	sleep 10
 
 	# ADD WARNING BANNER
 	cat "/home/honey/static/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$n/rootfs/etc/motd > /dev/null
