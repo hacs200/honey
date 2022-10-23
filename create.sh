@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo modprobe br_netfilter
-sudo sysctl -p /etc/sysctl.conf
+#sudo modprobe br_netfilter
+#sudo sysctl -p /etc/sysctl.conf
 
 sudo iptables-restore /home/honey/iptables.txt
 sudo /home/honey/delete.sh
@@ -102,10 +102,6 @@ do
 
 	container_ip=$(sudo lxc-info -n $n -iH)
 	echo "container: $n, container_ip: $container_ip, external_ip: $ext_ip"
-	
-	# START HONEYPOT DATA COLLECTION
-	sudo /home/honey/tailing.sh $n $date
-
 
 	# SET UP MITM
 	port=$(sudo cat /home/honey/static/ports/${ext_ip}_port.txt)
@@ -122,6 +118,9 @@ do
 	# prerouting from external to mitm server
 	sudo iptables -w --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --protocol tcp --dport 22 --jump DNAT --to-destination "10.0.3.1:$port" 
 	sudo sysctl -w net.ipv4.conf.all.route_localnet=1
+
+	# START HONEYPOT DATA COLLECTION
+	sudo /home/honey/tailing.sh $n $date
 done
 
 exit 0
