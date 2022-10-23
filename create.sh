@@ -49,12 +49,12 @@ sudo lxc-attach -n template -- bash -c "echo 'PermitRootLogin yes' >> /etc/ssh/s
 sudo lxc-attach -n template -- bash -c "systemctl restart sshd"
 
 # INSTALL SNOOPY KEYLOGGER
-sudo lxc-attach -n template -- bash -c "sudo apt-get install wget -y"
-sleep 10
-sudo lxc-attach -n template -- bash -c "sudo wget -O install-snoopy.sh https://github.com/a2o/snoopy/raw/install/install/install-snoopy.sh"
-sudo lxc-attach -n template -- bash -c "sudo chmod 755 install-snoopy.sh"
-sudo lxc-attach -n template -- bash -c "sudo ./install-snoopy.sh stable"
-sudo lxc-attach -n template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
+# sudo lxc-attach -n template -- bash -c "sudo apt-get install wget -y"
+# sleep 10
+# sudo lxc-attach -n template -- bash -c "sudo wget -O install-snoopy.sh https://github.com/a2o/snoopy/raw/install/install/install-snoopy.sh"
+# sudo lxc-attach -n template -- bash -c "sudo chmod 755 install-snoopy.sh"
+# sudo lxc-attach -n template -- bash -c "sudo ./install-snoopy.sh stable"
+# sudo lxc-attach -n template -- bash -c "sudo rm -rf ./install-snoopy.* snoopy-*" 
 # sudo lxc-attach -n template -- bash -c "wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token wceUolqqD-s5-CjqnwBUOSIZq6pyjwyDlal6eUF3l9uiucH3g9IdrUnfFRhpstkcHaiJm5hjgPAH1YPvXM3DwVk9Y66ed7EKOh3NJDezI_Jtjvk_ichHP9jnD3mWCjh-5m35byI --claim-url https://app.netdata.cloud"
 
 
@@ -90,6 +90,7 @@ do
 	template="template_${scenario}"
 	n="${scenario}_${ext_ip}" # name of the honeypot being deployed
 	mask=32
+	date=$(date "+%F-%H-%M-%S")
 		
 	# CREATE HONEYPOT 
 	sudo lxc-copy -n $template -N $n
@@ -103,13 +104,24 @@ do
 	echo "container: $n, container_ip: $container_ip, external_ip: $ext_ip"
 	
 	# START HONEYPOT DATA COLLECTION
-	sudo /home/honey/tailing.sh $n $(date "+%F-%H-%M-%S")
+	sudo /home/honey/tailing.sh $n $date
+
+
+	# SET UP MITM
+	port=$(sudo cat /home/honey/static/ports/${ext_ip}_port.txt)
+	
+	sudo forever -l "/home/honey/logs/${scenario}/${date}_${n}.log" --id $n --append start /home/honey/MITM/mitm.js -n $n -i $container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
 	
 	# SET UP HONEYPOT's FIREWALL RULES
 	sudo ip link set enp4s2 up  
 	sudo ip addr add $ext_ip/$mask brd + dev enp4s2
-	sudo iptables --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $container_ip
-	sudo iptables --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip 
+	# prerouting
+	sudo iptables -w --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $container_ip
+	# postrouting
+	sudo iptables -w --table nat --insert POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
+	# prerouting from external to mitm server
+	sudo iptables -w --table nat --insert PREROUTING --source 0.0.0.0/0 --destination $ext_ip --protocol tcp --dport 22 --jump DNAT --to-destination "10.0.3.1:$port" 
+	sudo sysctl -w net.ipv4.conf.all.route_localnet=1
 done
 
 exit 0
