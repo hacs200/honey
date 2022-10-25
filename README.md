@@ -33,7 +33,7 @@ The script creates each of the four honeypot templates and one copy of each temp
 ### <code>tailing.sh</code>
 <code>Usage: ./tailing.sh [scenario_externalip] [datetime]</code>
 
-This script takes one argument, the name of the container which we need to collect data for. In order to preserve commands that have been executed, even in the case where the attacker deletes the <code>auth.log</code> for the container, we tail the honeypot's <code>auth.log</code> and copy each line addition over to our own copy on the host machine. This process is run in the background and outputs to <code>logs/{scenario}/{datetime_scenario_externalip}.log</code>. We also use the <code>inot.sh</code> script to monitor the log and trigger the recycling process whenever an attacker has disconnected from the container.
+This script takes two arguments, the name of the container which we need to collect data for and the current date and time. The script touches the log file that will be monitored and calls the <code>inot.sh</code> script, passing in the parameters of the container log file and the external IP address for the container.
 
 ### <code>inot.sh</code>
 <code>Usage: ./inot.sh [container log file] [scenario_externalip]</code>
