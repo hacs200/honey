@@ -3,7 +3,9 @@
 # kill processes
 for i in $(sudo ps -e | grep inot.sh | awk '{print $1}'); do sudo kill $i; done
 for i in $(sudo ps -e | grep inotifywait | awk '{print $1}'); do sudo kill $i; done
-sudo forever stopall
+#sudo forever stopall
+sudo pm2 stop all
+sudo pm2 delete all
 for i in $(sudo ps -e | grep "tail" | awk '{print $1}'); do sudo kill $i; done
 for i in $(sudo ps -e | grep node | awk '{print $1}';); do sudo kill $i; done
 # kill containers

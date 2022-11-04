@@ -19,18 +19,19 @@ echo "*******************************************************************"
 echo "                     RECYCLE SCRIPT TRIGGERED"
 echo "*******************************************************************"
 
-# kill tail process
-sudo kill $tail_pid
-# kill mitm process
-sudo forever stop $name
-echo "forever stop: $name"
-sleep 3
-
 # delete iptable rules
 sudo iptables -w --table nat --delete PREROUTING --source 0.0.0.0/0 --destination $ext_ip --jump DNAT --to-destination $container_ip
 sudo iptables -w --table nat --delete POSTROUTING --source $container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
 sudo iptables -w --table nat --delete PREROUTING --source 0.0.0.0/0 --destination $ext_ip --protocol tcp --dport 22 --jump DNAT --to-destination 10.0.3.1:$port
 sudo ip addr delete $ext_ip/$mask brd + dev enp4s2
+
+# kill tail process
+sudo kill $tail_pid
+# kill mitm process
+sudo pm2 stop $name
+sudo pm2 delete $name
+echo "forever stop: $name"
+sleep 3
 
 # shut down and kill container
 sudo lxc-stop -n $name --kill
@@ -61,7 +62,7 @@ echo "$new_name: $container_ip, external: $ext_ip"
 # start tailing on new container
 sudo /home/honey/tailing.sh $new_name $date
 
-sudo forever -l "/home/honey/logs/${new_scenario}/${date}_${new_name}.log" --id $new_name --append start /home/honey/MITM/mitm.js -n $new_name -i $new_container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
+sudo pm2 -l "/home/honey/logs/${new_scenario}/${date}_${new_name}.log" start /home/honey/MITM/mitm.js --name $new_name -- -n $new_name -i $new_container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
 
 # set up new iptable rules
 sudo ip link set enp4s2 up

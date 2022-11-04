@@ -48,6 +48,8 @@ sudo lxc-attach -n template -- bash -c "sudo systemctl enable ssh --now"
 sudo lxc-attach -n template -- bash -c "echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config"
 sudo lxc-attach -n template -- bash -c "systemctl restart sshd"
 
+# sudo lxc-attach -n template -- bash -c "cd /etc/security && echo '*       hard    maxsyslogins    1' >> limits.conf && echo 'root hard    maxlogins   1' >> limits.conf"
+
 # INSTALL SNOOPY KEYLOGGER
 # sudo lxc-attach -n template -- bash -c "sudo apt-get install wget -y"
 # sleep 10
@@ -75,6 +77,8 @@ do
 
 	# ADD WARNING BANNER
 	cat "/home/honey/static/warnings/$scenario.txt" | sudo tee -a /var/lib/lxc/$n/rootfs/etc/motd > /dev/null
+	# echo "Banner /home/honey/static/warnings/${scenario}.txt" >> /var/lib/lxc/$n/rootfs/etc/ssh/ssd_config
+	# sudo lxc-attach -n $n -- bash -c "sudo systemctl reload ssh.service"
 	sudo lxc-stop -n $n		
 done
 
@@ -82,7 +86,6 @@ done
 # CREATE ACTUAL HONEYPOTS #
 # *********************** #
 
-LENGTH=4
 for ((j = 0 ; j < $LENGTH; j++));
 do
 	ext_ip=${ips[$j]}
@@ -106,7 +109,7 @@ do
 	# SET UP MITM
 	port=$(sudo cat /home/honey/static/ports/${ext_ip}_port.txt)
 	
-	sudo forever -l "/home/honey/logs/${scenario}/${date}_${n}.log" --id $n --append start /home/honey/MITM/mitm.js -n $n -i $container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
+	sudo pm2 -l "/home/honey/logs/${scenario}/${date}_${n}.log" start /home/honey/MITM/mitm.js --name $n -- -n $n -i $container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
 	
 	# SET UP HONEYPOT's FIREWALL RULES
 	sudo ip link set enp4s2 up  
