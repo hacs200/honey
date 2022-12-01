@@ -1,5 +1,7 @@
 node_modules/
-MITM/
+MITM/logs/
+MITM/lxc/
+MITM/node_modules/
 data/
 logs/
 test.txt
