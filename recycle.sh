@@ -60,9 +60,12 @@ echo "$new_name: $container_ip, external: $ext_ip"
 #sudo iptables --table nat --insert POSTROUTING --source $new_container_ip --destination 0.0.0.0/0 --jump SNAT --to-source $ext_ip
 
 # start tailing on new container
-sudo /home/honey/tailing.sh $new_name $date
+#sudo /home/honey/tailing.sh $new_name $date
+datetime=$(date)
+sudo touch /home/honey/logs/${scenario}/${datetime}_${n}.log
+sudo /home/honey/inot.sh /home/honey/logs/${scenario}/${datetime}_${n}.log $n &
 
-sudo pm2 -l "/home/honey/logs/${new_scenario}/${date}_${new_name}.log" start /home/honey/MITM/mitm.js --name $new_name -- -n $new_name -i $new_container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug
+sudo pm2 -l "/home/honey/logs/${new_scenario}/${date}_${new_name}.log" start /home/honey/MITM/mitm.js --name $new_name -- -n $new_name -i $new_container_ip -p $port --mitm-ip 10.0.3.1 --auto-access --auto-access-fixed 1 --debug --ssh-server-banner-file /home/honey/static/warnings/${new_scenario}.txt
 
 # set up new iptable rules
 sudo ip link set enp4s2 up

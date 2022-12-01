@@ -9,8 +9,13 @@ for file in $files; do
 	sudo python3 data_parsing.py $file
 done
 
-#tar cvzf /home/honey/logs/zipped_logs/$day.tar.gz /home/honey/logs/no_banner/$day*
+tar cvzf /mnt/sdb/$day.tar.gz /home/honey/MITM/logs/session_streams/$day*
+
+for file in $files; do
+	sudo rm /home/honey/MITM/logs/session_streams/$file
+done
 #for file in "/home/honey/logs/no_banner/$day*"; do
+
 #	file=$(cut -d '/' -f 6 $file)
 #	sudo python3 mitm_data_parsing.py file
 #done

@@ -32,9 +32,8 @@ for line in session_log.stdout.split('\n'):
     elif attack_stream_start and not attack_stream_end:
         if line.find("Output Below") != -1:
             attack_stream_end = True
-        else:
-            if line.find("Noninteractive") == -1:
-                commands.append(line)
+        else: 
+            commands.append(line)
 
 if not end_found:
     with open(f"/home/honey/MITM/logs/logouts/{full_container_name}.log", "r") as file:
